@@ -1,0 +1,280 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   DREAMS AI LEVERAGE LAB — Electric Blueprint Design System
+   Dark navy canvas + electric teal glow + DBR gold accents
+   Typography: Space Grotesk (display) + DM Sans (body)
+   ============================================================ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* DBR Brand Tokens */
+  --teal: oklch(0.78 0.15 175);
+  --teal-glow: oklch(0.78 0.15 175 / 0.25);
+  --teal-glow-sm: oklch(0.78 0.15 175 / 0.12);
+  --gold: oklch(0.78 0.14 75);
+  --gold-glow: oklch(0.78 0.14 75 / 0.25);
+  --purple-accent: oklch(0.62 0.18 280);
+  --coral-accent: oklch(0.68 0.18 25);
+  --blue-accent: oklch(0.68 0.15 240);
+  --green-accent: oklch(0.78 0.15 155);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.08 0.02 240);
+  --foreground: oklch(0.93 0.02 175);
+  --card: oklch(0.11 0.025 240);
+  --card-foreground: oklch(0.93 0.02 175);
+  --popover: oklch(0.11 0.025 240);
+  --popover-foreground: oklch(0.93 0.02 175);
+  --primary: oklch(0.78 0.15 175);
+  --primary-foreground: oklch(0.08 0.02 240);
+  --secondary: oklch(0.14 0.025 240);
+  --secondary-foreground: oklch(0.75 0.04 175);
+  --muted: oklch(0.14 0.025 240);
+  --muted-foreground: oklch(0.55 0.06 175);
+  --accent: oklch(0.78 0.14 75);
+  --accent-foreground: oklch(0.08 0.02 240);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.78 0.15 175 / 0.15);
+  --input: oklch(0.78 0.15 175 / 0.15);
+  --ring: oklch(0.78 0.15 175 / 0.5);
+  --chart-1: oklch(0.78 0.15 175);
+  --chart-2: oklch(0.78 0.14 75);
+  --chart-3: oklch(0.62 0.18 280);
+  --chart-4: oklch(0.68 0.15 240);
+  --chart-5: oklch(0.78 0.15 155);
+  --sidebar: oklch(0.11 0.025 240);
+  --sidebar-foreground: oklch(0.93 0.02 175);
+  --sidebar-primary: oklch(0.78 0.15 175);
+  --sidebar-primary-foreground: oklch(0.08 0.02 240);
+  --sidebar-accent: oklch(0.14 0.025 240);
+  --sidebar-accent-foreground: oklch(0.93 0.02 175);
+  --sidebar-border: oklch(0.78 0.15 175 / 0.15);
+  --sidebar-ring: oklch(0.78 0.15 175 / 0.5);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  a[href],
+  select:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 100%; /* Fills the 1100px box */
+    }
+  }
+
+  /* Blueprint grid overlay */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(oklch(0.78 0.15 175 / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.78 0.15 175 / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Glow card system */
+  .glow-card-teal {
+    background: oklch(0.11 0.025 240);
+    border: 1px solid oklch(0.78 0.15 175 / 0.28);
+    box-shadow: 0 0 20px oklch(0.78 0.15 175 / 0.08);
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s;
+  }
+  .glow-card-teal:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px oklch(0.78 0.15 175 / 0.25);
+  }
+  .glow-card-purple {
+    background: oklch(0.11 0.025 240);
+    border: 1px solid oklch(0.62 0.18 280 / 0.28);
+    box-shadow: 0 0 20px oklch(0.62 0.18 280 / 0.08);
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s;
+  }
+  .glow-card-purple:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px oklch(0.62 0.18 280 / 0.25);
+  }
+  .glow-card-gold {
+    background: oklch(0.11 0.025 240);
+    border: 1px solid oklch(0.78 0.14 75 / 0.28);
+    box-shadow: 0 0 20px oklch(0.78 0.14 75 / 0.08);
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s;
+  }
+  .glow-card-gold:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px oklch(0.78 0.14 75 / 0.25);
+  }
+  .glow-card-blue {
+    background: oklch(0.11 0.025 240);
+    border: 1px solid oklch(0.68 0.15 240 / 0.28);
+    box-shadow: 0 0 20px oklch(0.68 0.15 240 / 0.08);
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s;
+  }
+  .glow-card-blue:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px oklch(0.68 0.15 240 / 0.25);
+  }
+  .glow-card-green {
+    background: oklch(0.11 0.025 240);
+    border: 1px solid oklch(0.78 0.15 155 / 0.28);
+    box-shadow: 0 0 20px oklch(0.78 0.15 155 / 0.08);
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s;
+  }
+  .glow-card-green:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px oklch(0.78 0.15 155 / 0.25);
+  }
+  .glow-card-coral {
+    background: oklch(0.11 0.025 240);
+    border: 1px solid oklch(0.68 0.18 25 / 0.28);
+    box-shadow: 0 0 20px oklch(0.68 0.18 25 / 0.08);
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s;
+  }
+  .glow-card-coral:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px oklch(0.68 0.18 25 / 0.25);
+  }
+
+  /* Section divider */
+  .sec-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+  .sec-divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, oklch(0.78 0.15 175 / 0.3), transparent);
+  }
+  .sec-divider-line-rev {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(270deg, oklch(0.78 0.15 175 / 0.3), transparent);
+  }
+  .sec-divider-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: oklch(0.78 0.15 175);
+    white-space: nowrap;
+  }
+
+  /* Pulse dot for live badge */
+  .pulse-dot {
+    width: 7px;
+    height: 7px;
+    background: oklch(0.78 0.15 175);
+    border-radius: 50%;
+    box-shadow: 0 0 8px oklch(0.78 0.15 175);
+    animation: pulse-anim 2s infinite;
+  }
+  @keyframes pulse-anim {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  @keyframes float-logo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1), transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Diagonal section break */
+  .diagonal-break {
+    clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 100%);
+    margin-top: -3rem;
+    padding-top: 5rem;
+  }
+}
