@@ -13,6 +13,100 @@
     <script src="/__manus__/debug-collector.js" defer></script>
   </head>
   <body>
+
+<!-- DBR Sub-Page Navigation Bar - injected for multi-page SEO -->
+<style>
+  #dbr-subnav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    background: rgba(1,8,16,0.97);
+    border-top: 1px solid rgba(0,201,184,0.3);
+    backdrop-filter: blur(12px);
+    padding: 0;
+  }
+  #dbr-subnav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px 16px;
+    flex-wrap: wrap;
+  }
+  #dbr-subnav a {
+    color: #8899aa;
+    text-decoration: none;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 8px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  #dbr-subnav a:hover {
+    color: #00C9B8;
+    background: rgba(0,201,184,0.12);
+    border-color: rgba(0,201,184,0.25);
+  }
+  #dbr-subnav a.active {
+    color: #00C9B8;
+    background: rgba(0,201,184,0.12);
+    border-color: rgba(0,201,184,0.3);
+  }
+  #dbr-subnav .nav-divider {
+    color: rgba(0,201,184,0.3);
+    font-size: 0.7rem;
+    padding: 0 2px;
+  }
+  #dbr-subnav .nav-cta-btn {
+    background: #00C9B8 !important;
+    color: #010810 !important;
+    font-weight: 700 !important;
+    border: none !important;
+  }
+  #dbr-subnav .nav-cta-btn:hover {
+    background: #00a89a !important;
+  }
+  /* Push page content up so bottom nav doesn't cover it */
+  body { padding-bottom: 52px !important; }
+  @media (max-width: 600px) {
+    #dbr-subnav-inner { gap: 2px; padding: 6px 8px; }
+    #dbr-subnav a { font-size: 0.68rem; padding: 5px 9px; }
+    .nav-divider { display: none; }
+  }
+</style>
+<div id="dbr-subnav">
+  <div id="dbr-subnav-inner">
+    <a href="/" id="nav-home">🏠 Home</a>
+    <span class="nav-divider">|</span>
+    <a href="/curriculum" id="nav-curriculum">📋 Curriculum</a>
+    <span class="nav-divider">|</span>
+    <a href="/tools" id="nav-tools">🛠️ Tool Stack</a>
+    <span class="nav-divider">|</span>
+    <a href="/faq" id="nav-faq">❓ FAQ</a>
+    <span class="nav-divider">|</span>
+    <a href="https://dreamsfaststart.com" class="nav-cta-btn">Save My Seat →</a>
+  </div>
+</div>
+<script>
+(function(){
+  var path = window.location.pathname.replace(/\/+$/, '') || '/';
+  var map = {'/': 'nav-home', '/curriculum': 'nav-curriculum', '/tools': 'nav-tools', '/faq': 'nav-faq'};
+  var active = map[path];
+  if (active) {
+    var el = document.getElementById(active);
+    if (el) el.classList.add('active');
+  }
+})();
+</script>
+
     <script id="manus-runtime">window.__MANUS_HOST_DEV__ = false;
 (function(){"use strict";var Mr={exports:{}},Kn={};/**
  * @license React

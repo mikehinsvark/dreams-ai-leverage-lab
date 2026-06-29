@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aileveragelab.pro/sitemap.xml
