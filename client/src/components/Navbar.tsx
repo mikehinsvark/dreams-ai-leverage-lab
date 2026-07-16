@@ -1,3 +1,4 @@
+/* Electric Blueprint navigation: compact, high-contrast, and consistent across desktop and mobile routes. */
 import { useState, useEffect } from "react";
 import { Menu, X, Download, ChevronDown } from "lucide-react";
 import { useLocation } from "wouter";
@@ -103,6 +104,22 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
+
+            <button
+              onClick={() => handleTopicClick("/whileyousleep")}
+              className="text-sm font-bold transition-all duration-150"
+              style={{ color: "oklch(0.78 0.14 75)", fontFamily: "'Space Grotesk', sans-serif" }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.color = "oklch(0.86 0.15 75)";
+                (e.currentTarget as HTMLElement).style.textShadow = "0 0 14px oklch(0.78 0.14 75 / 0.35)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.color = "oklch(0.78 0.14 75)";
+                (e.currentTarget as HTMLElement).style.textShadow = "none";
+              }}
+            >
+              While You Sleep
+            </button>
 
             {/* Topics dropdown */}
             <div className="relative">
@@ -226,6 +243,13 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
+            <button
+              onClick={() => handleTopicClick("/whileyousleep")}
+              className="text-left text-sm font-bold py-2"
+              style={{ color: "oklch(0.78 0.14 75)", fontFamily: "'Space Grotesk', sans-serif" }}
+            >
+              While You Sleep →
+            </button>
             <div
               className="py-2 border-t"
               style={{ borderColor: "oklch(0.78 0.15 175 / 0.1)" }}

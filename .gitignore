@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.manus-logs/
+qa/
+.DS_Store
+*.log
