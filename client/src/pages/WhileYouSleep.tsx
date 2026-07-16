@@ -38,6 +38,8 @@ import duplicateArt from "@/assets/while-you-sleep/while-you-sleep-duplicate.web
 import eclipseBolt from "@/assets/while-you-sleep/while-you-sleep-eclipse-bolt.png";
 import "./while-you-sleep.css";
 
+const CLAUDE_REFERRAL_URL = "https://claude.ai/referral/UhFq2KPTiQ?s=cowork&v=apps";
+
 const sessions = [
   { id: "journey", short: "Overview", label: "The 3-Week Journey", number: "00" },
   { id: "session1", short: "Session 1", label: "Meet Your Team", number: "01" },
@@ -89,7 +91,7 @@ const agents = [
 ];
 
 const installSteps = [
-  ["Open the Claude desktop app", "Download it from claude.ai/download. You need a computer for this experience—not only a phone."],
+  ["Open the Claude desktop app", "Use any Claude Desktop referral button on this page. You need a computer for this experience—not only a phone."],
   ["Sign in with your business email", "Use the Google account you want connected to your business inbox and calendar."],
   ["Switch to Cowork mode", "Cowork is where your agents live. If you do not see it, update the desktop app and restart."],
   ["Install the DBR AI Agent Team plugin", "Use the exact install link from your trainer or team channel to add the Genies and Dreams OS."],
@@ -242,7 +244,7 @@ export default function WhileYouSleep() {
           </button>
           <nav aria-label="While You Sleep sections">
             <button type="button" onClick={() => navigate("/")}><ArrowLeft size={15} /> Main Lab</button>
-            <a href="https://claude.ai/download" target="_blank" rel="noreferrer" className="wys-button wys-button--small">
+            <a href={CLAUDE_REFERRAL_URL} target="_blank" rel="noreferrer" className="wys-button wys-button--small">
               Get Claude Desktop <ExternalLink size={14} />
             </a>
           </nav>
@@ -348,7 +350,7 @@ export default function WhileYouSleep() {
             <div className="wys-install-layout">
               <aside className="wys-install-aside wys-reveal">
                 <span>Guided install</span><h3>Seven steps from download to first win.</h3><p>Complete these in order. Your trainer can resolve most issues in minutes when everyone stays on the same checkpoint.</p>
-                <a href="https://claude.ai/download" target="_blank" rel="noreferrer">Download Claude Desktop <ExternalLink size={15} /></a>
+                <a href={CLAUDE_REFERRAL_URL} target="_blank" rel="noreferrer">Download Claude Desktop <ExternalLink size={15} /></a>
               </aside>
               <div className="wys-install-list">
                 {installSteps.map(([title, description], index) => (
@@ -442,7 +444,7 @@ export default function WhileYouSleep() {
             <h2>Same 24 hours.<br /><em>Different leverage.</em></h2>
             <div>Twelve weeks from now, one version of you is still doing everything manually. The other wakes up to a briefing, researched prospects, and prepared outreach.</div>
             <div className="wys-final__actions">
-              <a href="https://claude.ai/download" target="_blank" rel="noreferrer" className="wys-button">Download Claude Desktop <ExternalLink size={16} /></a>
+              <a href={CLAUDE_REFERRAL_URL} target="_blank" rel="noreferrer" className="wys-button">Download Claude Desktop <ExternalLink size={16} /></a>
               <button type="button" className="wys-button wys-button--ghost" onClick={() => scrollToSection("session1")}>Restart Session 1 <ArrowRight size={16} /></button>
             </div>
             <small>3 sessions · 60 minutes each · No technical background required · Weekly support</small>
