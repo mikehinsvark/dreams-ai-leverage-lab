@@ -191,13 +191,17 @@ export default function Navbar() {
             </a>
 
             <a
-              href="mailto:mikeceo@gmail.com?subject=Register%20Me%20for%20the%20DBR%20AI%20Accelerator"
-              className="px-5 py-2 rounded-full text-sm font-bold transition-all duration-200"
+              href="/savemyseat/"
+              className="inline-flex shrink-0 items-center justify-center rounded-xl font-bold transition-all duration-200"
               style={{
                 background: "oklch(0.78 0.15 175)",
                 color: "oklch(0.08 0.02 240)",
                 fontFamily: "'Space Grotesk', sans-serif",
-                boxShadow: "0 0 20px oklch(0.78 0.15 175 / 0.3)",
+                boxShadow: "0 0 18px oklch(0.78 0.15 175 / 0.3)",
+                fontSize: "13px",
+                lineHeight: 1,
+                padding: "9px 15px",
+                whiteSpace: "nowrap",
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = "scale(1.04)";
@@ -295,12 +299,14 @@ export default function Navbar() {
                 Starter Guide
               </a>
               <a
-                href="mailto:mikeceo@gmail.com?subject=Register%20Me%20for%20the%20DBR%20AI%20Accelerator"
-                className="flex-1 px-4 py-2.5 rounded-full text-xs font-bold text-center"
+                href="/savemyseat/"
+                className="flex-1 inline-flex items-center justify-center rounded-xl text-xs font-bold text-center"
                 style={{
                   background: "oklch(0.78 0.15 175)",
                   color: "oklch(0.08 0.02 240)",
                   fontFamily: "'Space Grotesk', sans-serif",
+                  padding: "9px 13px",
+                  whiteSpace: "nowrap",
                 }}
               >
                 Save My Seat →

@@ -6,6 +6,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import SaveMySeatRedirect from "./pages/SaveMySeatRedirect";
 import TopicPage from "./pages/TopicPage";
 import WhileYouSleep from "./pages/WhileYouSleep";
 
@@ -15,6 +16,8 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/topics/:id" component={TopicPage} />
       <Route path="/whileyousleep" component={WhileYouSleep} />
+      <Route path="/savemyseat" component={SaveMySeatRedirect} />
+      <Route path="/savemyseat/" component={SaveMySeatRedirect} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

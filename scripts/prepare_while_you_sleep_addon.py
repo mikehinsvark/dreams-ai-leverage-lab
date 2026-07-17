@@ -2,8 +2,8 @@
 """Prepare an add-on-only GitHub Pages release for AI Leverage Lab.
 
 This script starts from a checkout of the current live `main` branch. It never
-rebuilds or replaces the existing homepage. It copies the new route bundle and
-its hashed assets, adds a guarded navigation link injection, and updates the
+rebuilds or replaces the existing homepage. It copies the new route bundles and
+hashed assets, adds guarded navigation and CTA enhancements, and updates the
 sitemap.
 """
 
@@ -31,6 +31,26 @@ NAV_INJECTION = r'''<!-- WHILE-YOU-SLEEP-NAV:START -->
     text-shadow: 0 0 14px rgba(226,179,93,.38) !important;
   }
   .while-you-sleep-nav-link:active { transform: scale(.97) !important; }
+  .dbr-compact-seat-link {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 9px 15px !important;
+    border-radius: 12px !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+  @media (max-width: 1023px) {
+    .dbr-compact-seat-link {
+      flex: 1 1 0 !important;
+      padding: 9px 13px !important;
+    }
+  }
 </style>
 <script id="while-you-sleep-nav-script">
 (() => {
@@ -49,6 +69,15 @@ NAV_INJECTION = r'''<!-- WHILE-YOU-SLEEP-NAV:START -->
       link.className = `${starter.className} while-you-sleep-nav-link`;
       link.setAttribute('aria-label', 'Open While You Sleep AI Agent Training');
       parent.insertBefore(link, starter);
+    });
+
+    const seats = [...header.querySelectorAll('a')].filter(
+      (link) => (link.textContent || '').trim().startsWith('Save My Seat')
+    );
+    seats.forEach((seat) => {
+      seat.href = '/savemyseat/';
+      seat.classList.add('dbr-compact-seat-link');
+      seat.setAttribute('aria-label', 'Open AI Leverage Lab registration');
     });
   };
   addLinks();
@@ -78,10 +107,16 @@ def sha256_text(text: str) -> str:
 
 
 def strip_nav_injection(text: str) -> str:
-    exact_block = NAV_INJECTION + "\n  "
-    if exact_block in text:
-        return text.replace(exact_block, "", 1)
-    return text
+    start = text.find(NAV_START)
+    end = text.find(NAV_END, start + len(NAV_START)) if start != -1 else -1
+    if start == -1 and end == -1:
+        return text
+    if start == -1 or end == -1:
+        raise RuntimeError("Homepage contains an incomplete managed navigation injection")
+    end += len(NAV_END)
+    while end < len(text) and text[end] in "\r\n ":
+        end += 1
+    return text[:start] + text[end:]
 
 
 def inject_navigation(index_path: Path) -> tuple[str, str]:
@@ -111,14 +146,32 @@ def prepare_route(live_dir: Path, dist_dir: Path) -> None:
         shutil.copy2(icon, live_dir / icon.name)
 
 
+def prepare_signup_route(live_dir: Path, dist_dir: Path) -> None:
+    signup_source = dist_dir / "savemyseat"
+    if not (signup_source / "index.html").exists():
+        raise RuntimeError("Build is missing savemyseat/index.html")
+    shutil.copytree(signup_source, live_dir / "savemyseat", dirs_exist_ok=True)
+
+
 def update_sitemap(sitemap_path: Path) -> None:
     text = sitemap_path.read_text(encoding="utf-8")
-    if "https://aileveragelab.pro/whileyousleep" in text:
-        return
-    entry = f'''  <url>\n    <loc>https://aileveragelab.pro/whileyousleep</loc>\n    <lastmod>{date.today().isoformat()}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>\n'''
     if "</urlset>" not in text:
         raise RuntimeError("Live sitemap is missing </urlset>")
-    sitemap_path.write_text(text.replace("</urlset>", entry + "</urlset>", 1), encoding="utf-8")
+    routes = [
+        ("https://aileveragelab.pro/whileyousleep", "0.9"),
+        ("https://aileveragelab.pro/savemyseat", "1.0"),
+    ]
+    entries = []
+    for route, priority in routes:
+        if f"<loc>{route}</loc>" in text:
+            continue
+        entries.append(
+            f"  <url>\n    <loc>{route}</loc>\n    <lastmod>{date.today().isoformat()}</lastmod>\n"
+            f"    <changefreq>monthly</changefreq>\n    <priority>{priority}</priority>\n  </url>\n"
+        )
+    if entries:
+        text = text.replace("</urlset>", "".join(entries) + "</urlset>", 1)
+        sitemap_path.write_text(text, encoding="utf-8")
 
 
 def main() -> None:
@@ -134,12 +187,14 @@ def main() -> None:
 
     before, after = inject_navigation(args.live_dir / "index.html")
     prepare_route(args.live_dir, args.dist_dir)
+    prepare_signup_route(args.live_dir, args.dist_dir)
     update_sitemap(args.live_dir / "sitemap.xml")
 
     print(f"homepage_without_injection_before={before}")
     print(f"homepage_without_injection_after={after}")
     print("homepage_preserved=yes")
     print(f"route_index={args.live_dir / 'whileyousleep' / 'index.html'}")
+    print(f"signup_index={args.live_dir / 'savemyseat' / 'index.html'}")
 
 
 if __name__ == "__main__":
