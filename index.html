@@ -91,6 +91,26 @@ Error generating stack: `+l.message+`
     text-shadow: 0 0 14px rgba(226,179,93,.38) !important;
   }
   .while-you-sleep-nav-link:active { transform: scale(.97) !important; }
+  .dbr-compact-seat-link {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 9px 15px !important;
+    border-radius: 12px !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+  @media (max-width: 1023px) {
+    .dbr-compact-seat-link {
+      flex: 1 1 0 !important;
+      padding: 9px 13px !important;
+    }
+  }
 </style>
 <script id="while-you-sleep-nav-script">
 (() => {
@@ -109,6 +129,15 @@ Error generating stack: `+l.message+`
       link.className = `${starter.className} while-you-sleep-nav-link`;
       link.setAttribute('aria-label', 'Open While You Sleep AI Agent Training');
       parent.insertBefore(link, starter);
+    });
+
+    const seats = [...header.querySelectorAll('a')].filter(
+      (link) => (link.textContent || '').trim().startsWith('Save My Seat')
+    );
+    seats.forEach((seat) => {
+      seat.href = '/savemyseat/';
+      seat.classList.add('dbr-compact-seat-link');
+      seat.setAttribute('aria-label', 'Open AI Leverage Lab registration');
     });
   };
   addLinks();
