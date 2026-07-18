@@ -19,16 +19,86 @@
     <style>
       /* Electric Blueprint bridge: keep the clean Lab URL while the AI Genie experience fills the viewport. */
       :root {
+        --lab-nav-height: 3.6rem;
         color-scheme: dark;
         background: #04070f;
         font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
       }
       * { box-sizing: border-box; }
       html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #04070f; }
-      .genie-frame { width: 100%; height: 100%; border: 0; display: block; background: #04070f; }
+      body { display: flex; flex-direction: column; }
+      .genie-frame {
+        width: 100%;
+        min-height: 0;
+        flex: 1 1 auto;
+        border: 0;
+        display: block;
+        background: #04070f;
+      }
+      .lab-return-bar {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex: 0 0 var(--lab-nav-height);
+        align-items: center;
+        padding: 0 calc(1rem + env(safe-area-inset-right)) 0 calc(1rem + env(safe-area-inset-left));
+        border-bottom: 1px solid rgba(143, 245, 223, .13);
+        background:
+          linear-gradient(90deg, rgba(0, 214, 178, .07), transparent 34%),
+          rgba(4, 7, 15, .96);
+        box-shadow: 0 10px 34px rgba(0, 0, 0, .28);
+      }
+      .lab-return {
+        display: inline-flex;
+        align-items: center;
+        gap: .58rem;
+        min-height: 2.75rem;
+        padding: .7rem 1rem;
+        border: 1px solid rgba(143, 245, 223, .34);
+        border-radius: 999px;
+        color: #d7fff6;
+        background: rgba(4, 7, 15, .88);
+        box-shadow: 0 0 22px rgba(0, 214, 178, .14);
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+        font-size: .78rem;
+        font-weight: 700;
+        letter-spacing: .025em;
+        line-height: 1;
+        text-decoration: none;
+        transition:
+          transform 180ms cubic-bezier(.23, 1, .32, 1),
+          border-color 180ms cubic-bezier(.23, 1, .32, 1),
+          background-color 180ms cubic-bezier(.23, 1, .32, 1),
+          box-shadow 180ms cubic-bezier(.23, 1, .32, 1);
+      }
+      .lab-return__icon {
+        display: inline-grid;
+        width: 1.35rem;
+        height: 1.35rem;
+        place-items: center;
+        border-radius: 999px;
+        color: #04070f;
+        background: #00d6b2;
+        box-shadow: 0 0 14px rgba(0, 214, 178, .38);
+        font-size: 1rem;
+        transition: transform 180ms cubic-bezier(.23, 1, .32, 1);
+      }
+      .lab-return:hover {
+        transform: translateY(-1px) scale(1.02);
+        border-color: rgba(143, 245, 223, .72);
+        background: rgba(7, 20, 28, .94);
+        box-shadow: 0 0 28px rgba(0, 214, 178, .25);
+      }
+      .lab-return:hover .lab-return__icon { transform: translateX(-3px); }
+      .lab-return:active { transform: scale(.97); }
+      .lab-return:focus-visible {
+        outline: 2px solid #eba941;
+        outline-offset: 3px;
+      }
       .loading {
         position: fixed;
-        inset: 0;
+        inset: var(--lab-nav-height) 0 0;
         display: grid;
         place-items: center;
         z-index: 1;
@@ -53,12 +123,34 @@
       }
       .loading.hidden { opacity: 0; visibility: hidden; }
       @keyframes spin { to { transform: rotate(360deg); } }
+      @media (max-width: 520px) {
+        :root { --lab-nav-height: 3.35rem; }
+        .lab-return-bar {
+          padding-right: calc(.75rem + env(safe-area-inset-right));
+          padding-left: calc(.75rem + env(safe-area-inset-left));
+        }
+        .lab-return {
+          min-height: 2.45rem;
+          padding: .6rem .82rem;
+          font-size: .72rem;
+        }
+      }
       @media (prefers-reduced-motion: reduce) {
         .loading::before { animation: none; }
+        .lab-return,
+        .lab-return__icon { transition: none; }
+        .lab-return:hover,
+        .lab-return:hover .lab-return__icon { transform: none; }
       }
     </style>
   </head>
   <body>
+    <nav class="lab-return-bar" aria-label="AI Genie navigation">
+      <a class="lab-return" href="/" aria-label="Back to AI Leverage Lab home">
+        <span class="lab-return__icon" aria-hidden="true">←</span>
+        <span>Back to AI Leverage Lab</span>
+      </a>
+    </nav>
     <div class="loading" id="loading" aria-live="polite">Opening AI Genie Team</div>
     <iframe
       class="genie-frame"
