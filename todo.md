@@ -33,4 +33,20 @@
 - [x] Add `https://aileveragelab.pro/genies` as a clean route to `https://aigenieblue-dreams.manus.space/#integrations`.
 - [x] Extend the carousel-preserving release assembler to inject the button and publish the clean route.
 - [x] Build and verify desktop/mobile hero dimensions and carousel behavior locally.
-- [ ] Deploy and verify the live button, `/genies` destination, and unchanged hero height.
+- [x] Deploy and verify the live button, `/genies` destination, and unchanged hero height.
+
+## Button Hover Animation Gallery
+
+- [x] Create a self-contained interactive gallery with several distinct hover and tap animations.
+- [x] Match the gallery’s colors and typography to AI Leverage Lab for realistic comparison.
+- [x] Include clear labels and concise guidance for each animation style.
+- [x] Verify the gallery in a browser and deliver it for selection.
+
+## AI Genie Icon Launch and Hero Landing Fix
+
+- [x] Inspect the live AI Genie Team button injection and `/genies` wrapper scroll behavior.
+- [x] Add a visible bolt icon and the selected Icon Launch hover/tap animation without changing the action-row height.
+- [x] Remove the integrations auto-scroll behavior and force the embedded AI Genie page to open at its top hero.
+- [x] Update the editable source and carousel-preserving release assembler together.
+- [x] Verify desktop/mobile animation behavior, top-of-page landing, and carousel locally.
+- [ ] Deploy and verify the corrected live button and `/genies` landing behavior.

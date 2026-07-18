@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import SpinningGlobe from "@/components/SpinningGlobe";
 import { TOPIC_PAGES, PDF_URLS } from "@/lib/constants";
-import { Download } from "lucide-react";
+import { Download, Zap } from "lucide-react";
 
 // Design: Electric Blueprint — compact hero, everything above the fold
 // Status widgets left, headline center, globe right, topic strip pinned to bottom
@@ -253,7 +253,7 @@ export default function HeroSection() {
                 </a>
                 <a
                   href="/genies"
-                  className="px-4 py-2.5 rounded-full font-bold transition-all duration-200"
+                  className="group flex items-center gap-1.5 px-4 py-2.5 rounded-full font-bold transition-all duration-200"
                   style={{
                     background: "oklch(0.62 0.18 280 / 0.1)",
                     color: "oklch(0.78 0.15 175)",
@@ -265,13 +265,21 @@ export default function HeroSection() {
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLElement).style.transform = "scale(1.04)";
                     (e.currentTarget as HTMLElement).style.background = "oklch(0.62 0.18 280 / 0.18)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 24px oklch(0.78 0.15 175 / 0.28)";
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLElement).style.transform = "scale(1)";
                     (e.currentTarget as HTMLElement).style.background = "oklch(0.62 0.18 280 / 0.1)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 16px oklch(0.62 0.18 280 / 0.14)";
                   }}
                 >
                   AI Genie Team
+                  <Zap
+                    size={14}
+                    fill="currentColor"
+                    className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:rotate-12 group-hover:scale-110"
+                    aria-hidden="true"
+                  />
                 </a>
               </div>
 
