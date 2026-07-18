@@ -70,26 +70,20 @@
     ></iframe>
     <noscript>
       <p>
-        <a href="https://aigenieblue-dreams.manus.space/#integrations">Open the AI Genie Team integrations page</a>
+        <a href="https://aigenieblue-dreams.manus.space/">Open the AI Genie Team page</a>
       </p>
     </noscript>
     <script>
       (() => {
-        const target = 'https://aigenieblue-dreams.manus.space/#integrations';
         const frame = document.getElementById('genie-frame');
         const loading = document.getElementById('loading');
-        let initialized = false;
 
         frame.addEventListener('load', () => {
-          if (!initialized) {
-            initialized = true;
-            window.setTimeout(() => {
-              frame.src = target;
-              window.setTimeout(() => loading.classList.add('hidden'), 900);
-            }, 650);
-            return;
-          }
           window.setTimeout(() => loading.classList.add('hidden'), 350);
+        }, { once: true });
+
+        window.addEventListener('pageshow', (event) => {
+          if (event.persisted) frame.src = 'https://aigenieblue-dreams.manus.space/';
         });
 
         window.setTimeout(() => loading.classList.add('hidden'), 5000);

@@ -115,6 +115,7 @@ Error generating stack: `+l.message+`
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    gap: 6px !important;
     flex: 0 0 auto !important;
     padding: 10px 14px !important;
     border-radius: 999px !important;
@@ -128,12 +129,32 @@ Error generating stack: `+l.message+`
     text-decoration: none !important;
     transition: transform 160ms cubic-bezier(.23,1,.32,1), background 160ms cubic-bezier(.23,1,.32,1), box-shadow 160ms cubic-bezier(.23,1,.32,1) !important;
   }
+  .dbr-genie-bolt {
+    width: 0.88rem !important;
+    height: 0.88rem !important;
+    flex: 0 0 auto !important;
+    color: #eba941 !important;
+    filter: drop-shadow(0 0 4px rgba(235,169,65,.35)) !important;
+    transition: transform 220ms cubic-bezier(.23,1,.32,1), filter 220ms cubic-bezier(.23,1,.32,1) !important;
+    transform-origin: center !important;
+  }
   .dbr-genie-hero-link:hover {
     transform: scale(1.04) !important;
     background: oklch(0.62 0.18 280 / 0.18) !important;
-    box-shadow: 0 0 22px oklch(0.62 0.18 280 / 0.28) !important;
+    box-shadow: 0 0 24px oklch(0.78 0.15 175 / 0.28) !important;
+  }
+  .dbr-genie-hero-link:hover .dbr-genie-bolt {
+    transform: translate(3px,-3px) rotate(12deg) scale(1.14) !important;
+    filter: drop-shadow(0 0 7px rgba(235,169,65,.62)) !important;
   }
   .dbr-genie-hero-link:active { transform: scale(.97) !important; }
+  .dbr-genie-hero-link:active .dbr-genie-bolt {
+    transform: translate(1px,-1px) rotate(6deg) scale(1.06) !important;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dbr-genie-hero-link,
+    .dbr-genie-bolt { transition: none !important; }
+  }
   @media (max-width: 639px) {
     .dbr-genie-action-row {
       display: grid !important;
@@ -186,9 +207,9 @@ Error generating stack: `+l.message+`
       parent.classList.add('dbr-genie-action-row');
       const link = document.createElement('a');
       link.href = '/genies';
-      link.textContent = 'AI Genie Team';
+      link.innerHTML = 'AI Genie Team<svg class="dbr-genie-bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.2 1.8 4.8 13h5.7l-1.4 9.2L19.2 10h-6.1l.1-8.2Z"/></svg>';
       link.className = `${zoom.className} dbr-genie-hero-link`;
-      link.setAttribute('aria-label', 'Open AI Genie Team integrations');
+      link.setAttribute('aria-label', 'Open AI Genie Team');
       parent.insertBefore(link, zoom.nextSibling);
     });
   };
