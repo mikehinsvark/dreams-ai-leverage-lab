@@ -57,4 +57,4 @@
 - [x] Add a persistent, accessible Back to AI Leverage Lab control without covering key Genie content.
 - [x] Verify desktop, mobile, keyboard, and reduced-motion behavior locally.
 - [x] Sync and checkpoint the managed preview project.
-- [ ] Publish through the carousel-preserving release workflow and verify the live route.
+- [x] Publish through the carousel-preserving release workflow and verify the live route.
