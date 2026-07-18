@@ -49,4 +49,4 @@
 - [x] Remove the integrations auto-scroll behavior and force the embedded AI Genie page to open at its top hero.
 - [x] Update the editable source and carousel-preserving release assembler together.
 - [x] Verify desktop/mobile animation behavior, top-of-page landing, and carousel locally.
-- [ ] Deploy and verify the corrected live button and `/genies` landing behavior.
+- [x] Deploy and verify the corrected live button and `/genies` landing behavior.
