@@ -51,6 +51,43 @@ NAV_INJECTION = r'''<!-- WHILE-YOU-SLEEP-NAV:START -->
       padding: 9px 13px !important;
     }
   }
+  .dbr-genie-hero-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    padding: 10px 14px !important;
+    border-radius: 999px !important;
+    background: oklch(0.62 0.18 280 / 0.10) !important;
+    color: oklch(0.78 0.15 175) !important;
+    border: 1px solid oklch(0.62 0.18 280 / 0.44) !important;
+    box-shadow: 0 0 16px oklch(0.62 0.18 280 / 0.16) !important;
+    font-size: clamp(0.72rem, 1.1vw, 0.82rem) !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    transition: transform 160ms cubic-bezier(.23,1,.32,1), background 160ms cubic-bezier(.23,1,.32,1), box-shadow 160ms cubic-bezier(.23,1,.32,1) !important;
+  }
+  .dbr-genie-hero-link:hover {
+    transform: scale(1.04) !important;
+    background: oklch(0.62 0.18 280 / 0.18) !important;
+    box-shadow: 0 0 22px oklch(0.62 0.18 280 / 0.28) !important;
+  }
+  .dbr-genie-hero-link:active { transform: scale(.97) !important; }
+  @media (max-width: 639px) {
+    .dbr-genie-action-row {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+    .dbr-genie-action-row > a:first-child { grid-column: 1 / -1 !important; }
+    .dbr-genie-action-row > a:not(:first-child) {
+      min-width: 0 !important;
+      padding: 10px 7px !important;
+      font-size: 0.68rem !important;
+      justify-content: center !important;
+      white-space: nowrap !important;
+    }
+  }
 </style>
 <script id="while-you-sleep-nav-script">
 (() => {
@@ -78,6 +115,21 @@ NAV_INJECTION = r'''<!-- WHILE-YOU-SLEEP-NAV:START -->
       seat.href = '/savemyseat/';
       seat.classList.add('dbr-compact-seat-link');
       seat.setAttribute('aria-label', 'Open AI Leverage Lab registration');
+    });
+
+    const zoomLinks = [...document.querySelectorAll('a')].filter(
+      (link) => (link.textContent || '').trim() === 'Zoom Link'
+    );
+    zoomLinks.forEach((zoom) => {
+      const parent = zoom.parentElement;
+      if (!parent || parent.querySelector(':scope > .dbr-genie-hero-link')) return;
+      parent.classList.add('dbr-genie-action-row');
+      const link = document.createElement('a');
+      link.href = '/genies';
+      link.textContent = 'AI Genie Team';
+      link.className = `${zoom.className} dbr-genie-hero-link`;
+      link.setAttribute('aria-label', 'Open AI Genie Team integrations');
+      parent.insertBefore(link, zoom.nextSibling);
     });
   };
   addLinks();
@@ -153,6 +205,13 @@ def prepare_signup_route(live_dir: Path, dist_dir: Path) -> None:
     shutil.copytree(signup_source, live_dir / "savemyseat", dirs_exist_ok=True)
 
 
+def prepare_genies_route(live_dir: Path, dist_dir: Path) -> None:
+    genies_source = dist_dir / "genies"
+    if not (genies_source / "index.html").exists():
+        raise RuntimeError("Build is missing genies/index.html")
+    shutil.copytree(genies_source, live_dir / "genies", dirs_exist_ok=True)
+
+
 def update_sitemap(sitemap_path: Path) -> None:
     text = sitemap_path.read_text(encoding="utf-8")
     if "</urlset>" not in text:
@@ -160,6 +219,7 @@ def update_sitemap(sitemap_path: Path) -> None:
     routes = [
         ("https://aileveragelab.pro/whileyousleep", "0.9"),
         ("https://aileveragelab.pro/savemyseat", "1.0"),
+        ("https://aileveragelab.pro/genies", "0.9"),
     ]
     entries = []
     for route, priority in routes:
@@ -188,6 +248,7 @@ def main() -> None:
     before, after = inject_navigation(args.live_dir / "index.html")
     prepare_route(args.live_dir, args.dist_dir)
     prepare_signup_route(args.live_dir, args.dist_dir)
+    prepare_genies_route(args.live_dir, args.dist_dir)
     update_sitemap(args.live_dir / "sitemap.xml")
 
     print(f"homepage_without_injection_before={before}")
@@ -195,6 +256,7 @@ def main() -> None:
     print("homepage_preserved=yes")
     print(f"route_index={args.live_dir / 'whileyousleep' / 'index.html'}")
     print(f"signup_index={args.live_dir / 'savemyseat' / 'index.html'}")
+    print(f"genies_index={args.live_dir / 'genies' / 'index.html'}")
 
 
 if __name__ == "__main__":

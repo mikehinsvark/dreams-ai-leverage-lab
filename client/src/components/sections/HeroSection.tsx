@@ -53,10 +53,6 @@ export default function HeroSection() {
     return () => clearTimeout(timer);
   }, []);
 
-  const scrollDown = () => {
-    const el = document.querySelector("#about");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section
@@ -255,21 +251,28 @@ export default function HeroSection() {
                   <Download size={13} />
                   Week 1 Deck
                 </a>
-                <button
-                  onClick={scrollDown}
+                <a
+                  href="/genies"
                   className="px-4 py-2.5 rounded-full font-bold transition-all duration-200"
                   style={{
-                    background: "transparent",
-                    color: "oklch(0.55 0.04 175)",
-                    border: "1px solid oklch(0.78 0.15 175 / 0.18)",
+                    background: "oklch(0.62 0.18 280 / 0.1)",
+                    color: "oklch(0.78 0.15 175)",
+                    border: "1px solid oklch(0.62 0.18 280 / 0.4)",
                     fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: "clamp(0.78rem, 1.3vw, 0.88rem)",
+                    fontSize: "clamp(0.72rem, 1.2vw, 0.82rem)",
+                    boxShadow: "0 0 16px oklch(0.62 0.18 280 / 0.14)",
                   }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "oklch(0.78 0.15 175 / 0.06)"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = "scale(1.04)";
+                    (e.currentTarget as HTMLElement).style.background = "oklch(0.62 0.18 280 / 0.18)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = "scale(1)";
+                    (e.currentTarget as HTMLElement).style.background = "oklch(0.62 0.18 280 / 0.1)";
+                  }}
                 >
-                  Learn More
-                </button>
+                  AI Genie Team
+                </a>
               </div>
 
               {/* Mobile/tablet logo strip — shows when globe is hidden */}
