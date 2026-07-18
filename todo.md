@@ -50,3 +50,11 @@
 - [x] Update the editable source and carousel-preserving release assembler together.
 - [x] Verify desktop/mobile animation behavior, top-of-page landing, and carousel locally.
 - [x] Deploy and verify the corrected live button and `/genies` landing behavior.
+
+## Persistent Back to AI Leverage Lab Navigation
+
+- [x] Review the current `/genies` wrapper layout and embedded-frame stacking behavior.
+- [x] Add a persistent, accessible Back to AI Leverage Lab control without covering key Genie content.
+- [x] Verify desktop, mobile, keyboard, and reduced-motion behavior locally.
+- [x] Sync and checkpoint the managed preview project.
+- [ ] Publish through the carousel-preserving release workflow and verify the live route.
