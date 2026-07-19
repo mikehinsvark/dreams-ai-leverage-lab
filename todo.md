@@ -65,4 +65,4 @@
 - [x] Reduce the desktop and responsive headline scale to align with the reference sites.
 - [x] Verify line balance, supporting copy, artwork, and CTA layout on desktop and mobile.
 - [x] Sync and checkpoint the managed preview project.
-- [ ] Publish the update and verify the live custom-domain route.
+- [x] Publish the update and verify the live custom-domain route.
