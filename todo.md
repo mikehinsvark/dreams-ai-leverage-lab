@@ -74,3 +74,11 @@
 - [x] Verify line balance, supporting copy, section spacing, and cards across the full page on desktop and mobile.
 - [x] Sync and checkpoint the managed preview project.
 - [x] Publish the route-only release and verify the live custom-domain page and homepage carousel.
+
+## While You Sleep Compact Section Rhythm
+
+- [x] Audit desktop and mobile section padding, inter-section gaps, and large internal margins.
+- [x] Define and apply a tighter shared spacing system without compressing cards or body-copy readability.
+- [x] Verify section transitions, sticky elements, headings, and calls to action on desktop and mobile.
+- [x] Sync and checkpoint the managed preview project.
+- [ ] Publish the route-only release and verify the live custom-domain page and homepage carousel.
