@@ -73,4 +73,4 @@
 - [x] Define and apply one reduced responsive scale for overview, sessions, recovery, bonus, and closing headings.
 - [x] Verify line balance, supporting copy, section spacing, and cards across the full page on desktop and mobile.
 - [x] Sync and checkpoint the managed preview project.
-- [ ] Publish the route-only release and verify the live custom-domain page and homepage carousel.
+- [x] Publish the route-only release and verify the live custom-domain page and homepage carousel.
