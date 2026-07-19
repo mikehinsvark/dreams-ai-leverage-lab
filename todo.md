@@ -81,4 +81,4 @@
 - [x] Define and apply a tighter shared spacing system without compressing cards or body-copy readability.
 - [x] Verify section transitions, sticky elements, headings, and calls to action on desktop and mobile.
 - [x] Sync and checkpoint the managed preview project.
-- [ ] Publish the route-only release and verify the live custom-domain page and homepage carousel.
+- [x] Publish the route-only release and verify the live custom-domain page and homepage carousel.
