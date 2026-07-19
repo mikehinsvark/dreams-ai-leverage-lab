@@ -58,3 +58,11 @@
 - [x] Verify desktop, mobile, keyboard, and reduced-motion behavior locally.
 - [x] Sync and checkpoint the managed preview project.
 - [x] Publish through the carousel-preserving release workflow and verify the live route.
+
+## While You Sleep Hero Type Scale
+
+- [x] Inspect the live hero typography and locate the exact source styles.
+- [x] Reduce the desktop and responsive headline scale to align with the reference sites.
+- [x] Verify line balance, supporting copy, artwork, and CTA layout on desktop and mobile.
+- [x] Sync and checkpoint the managed preview project.
+- [ ] Publish the update and verify the live custom-domain route.
