@@ -89,4 +89,4 @@
 - [x] Reduce the hero footprint and apply a materially tighter section and subsection spacing scale.
 - [x] Verify the change is immediately visible on desktop while preserving mobile readability and sticky navigation.
 - [x] Sync and checkpoint the managed preview project.
-- [ ] Publish the route-only release and verify the live custom-domain page and homepage carousel.
+- [x] Publish the route-only release and verify the live custom-domain page and homepage carousel.
