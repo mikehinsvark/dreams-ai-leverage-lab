@@ -118,3 +118,5 @@
 - [x] Validate the refreshed homepage and While You Sleep route on desktop and mobile, including navigation, assets, downloads, and carousel behavior.
 - [ ] Synchronize the managed preview where appropriate, checkpoint the work, and publish the canonical GitHub-backed release without overwriting preserved routes.
 - [x] Complete all live-site auditing and verification through public URLs and repository access; do not request Manus browser authorization for this website update.
+- [ ] Add GitHub Pages-compatible direct entrypoints for dynamic `/topics/*` routes without overwriting the preserved `/whileyousleep`, `/savemyseat`, or `/genies` route artifacts.
+- [ ] Republish and verify direct route loads, Quantum Bolt branding, carousel controls, canonical return links, and both bundled PDF downloads on the custom domain.
