@@ -136,4 +136,4 @@
 - [x] Reduce the hero headline, body copy, status capsule, CTA controls, visual frame, and metric rail to the established compact site proportions without changing copy or destinations.
 - [x] Preserve mobile readability, registration behavior, downstream sections, and unrelated routes.
 - [x] Synchronize the managed preview and validate desktop/mobile first-fold balance, image crop, anchors, and overflow.
-- [ ] Checkpoint the reviewed revision, publish the canonical GitHub Pages update, and verify the compact hero on the live custom domain.
+- [x] Checkpoint the reviewed revision, publish the canonical GitHub Pages update, and verify the compact hero on the live custom domain.
