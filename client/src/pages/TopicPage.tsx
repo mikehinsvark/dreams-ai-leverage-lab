@@ -4,6 +4,8 @@ import { ArrowLeft, Download } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { TOPIC_PAGES, PDF_URLS } from "@/lib/constants";
+import quantumBolt from "@/assets/brand/ai-leverage-lab-icon.svg";
+import Dawnline from "@/components/Dawnline";
 
 // ── Per-topic content ──────────────────────────────────────────────────────────
 const topicContent: Record<string, {
@@ -237,15 +239,60 @@ export default function TopicPage() {
 
   if (!topic || !content) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: "oklch(0.08 0.02 240)" }}>
-        <div className="text-center">
-          <div className="text-6xl mb-4">🔍</div>
-          <h1 className="text-2xl font-bold mb-4" style={{ color: "oklch(0.93 0.02 175)", fontFamily: "'Space Grotesk', sans-serif" }}>
-            Topic not found
-          </h1>
-          <button onClick={() => navigate("/")} className="px-6 py-3 rounded-full font-bold" style={{ background: "oklch(0.78 0.15 175)", color: "oklch(0.08 0.02 240)", fontFamily: "'Space Grotesk', sans-serif" }}>
-            ← Back to Home
-          </button>
+      <div className="min-h-screen" style={{ background: "oklch(0.045 0.015 240)" }}>
+        <div className="blueprint-grid relative mx-auto min-h-screen w-full overflow-hidden" style={{ maxWidth: "1100px", background: "#03090D", boxShadow: "0 0 0 1px rgba(0,231,224,0.08), 0 0 80px rgba(3,9,13,0.85)" }}>
+          <Navbar />
+          <main className="relative overflow-hidden px-[clamp(22px,5vw,64px)] py-[clamp(56px,8vw,96px)]">
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(60% 65% at 82% 34%, rgba(42,140,255,0.11), transparent 68%)" }} />
+            <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_330px]">
+              <section>
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full px-3 py-1.5" style={{ border: "1px solid rgba(244,197,66,0.28)", background: "rgba(244,197,66,0.07)" }}>
+                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: "#F4C542", boxShadow: "0 0 8px #F4C542" }} />
+                  <span className="font-bold uppercase tracking-[0.22em]" style={{ color: "#F4C542", fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px" }}>Route 404 · Signal Interrupted</span>
+                </div>
+                <h1 className="max-w-2xl" style={{ color: "#EAFBFF", fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(2.8rem, 6vw, 5.6rem)", fontWeight: 800, letterSpacing: "-0.055em", lineHeight: 0.92 }}>
+                  Signal lost.<br /><span style={{ color: "#00E7E0" }}>Choose a live sector.</span>
+                </h1>
+                <p className="mt-6 max-w-xl text-base leading-relaxed" style={{ color: "rgba(159,195,202,0.78)", fontFamily: "'DM Sans', sans-serif" }}>
+                  This topic coordinate is not active. Return to the main command deck or route directly into one of the eight operating systems below.
+                </p>
+                <button onClick={() => navigate("/")} className="mt-7 rounded-full px-6 py-3 font-bold transition-all duration-200" style={{ background: "#00E7E0", color: "#03090D", boxShadow: "0 0 24px rgba(0,231,224,0.22)", fontFamily: "'Space Grotesk', sans-serif" }}>
+                  Return to AI Leverage Lab →
+                </button>
+              </section>
+              <aside className="relative overflow-hidden rounded-2xl p-6" style={{ background: "linear-gradient(160deg, rgba(7,27,42,0.95), rgba(3,9,13,0.95))", border: "1px solid rgba(0,231,224,0.18)", boxShadow: "0 24px 70px rgba(0,0,0,0.36)" }}>
+                <div className="absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(90deg, #00E7E0, #2A8CFF 62%, transparent)" }} />
+                <img src={quantumBolt} alt="" aria-hidden="true" className="mb-5 h-20 w-20" />
+                <div className="font-bold uppercase tracking-[0.2em]" style={{ color: "rgba(159,195,202,0.56)", fontFamily: "'IBM Plex Mono', monospace", fontSize: "8px" }}>Recovery Console</div>
+                <div className="mt-3 flex items-end justify-between border-b pb-3" style={{ borderColor: "rgba(0,231,224,0.1)" }}>
+                  <span style={{ color: "#EAFBFF", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700 }}>Valid sectors</span>
+                  <span className="tabular-nums" style={{ color: "#00E7E0", fontFamily: "'IBM Plex Mono', monospace", fontSize: "1.4rem", fontWeight: 700 }}>{String(TOPIC_PAGES.length).padStart(2, "0")}</span>
+                </div>
+                <div className="mt-4 space-y-2">
+                  {["NAVIGATION", "BRAND LINK", "TOPIC INDEX"].map((label, index) => (
+                    <div key={label} className="flex items-center justify-between">
+                      <span style={{ color: "rgba(159,195,202,0.62)", fontFamily: "'IBM Plex Mono', monospace", fontSize: "8px" }}>{label}</span>
+                      <span className="flex items-center gap-1.5" style={{ color: "#00E7E0", fontFamily: "'IBM Plex Mono', monospace", fontSize: "8px" }}><span className="h-1.5 w-1.5 rounded-full" style={{ background: index === 0 ? "#F4C542" : "#00E7E0" }} />READY</span>
+                    </div>
+                  ))}
+                </div>
+              </aside>
+            </div>
+
+            <div className="relative mt-14 flex items-center gap-3" aria-hidden="true">
+              <span style={{ color: "#F4C542", fontFamily: "'IBM Plex Mono', monospace", fontSize: "8px" }}>RECOVERY PATH</span>
+              <div className="h-px flex-1" style={{ background: "linear-gradient(90deg, #00E7E0, #2A8CFF 55%, #F4C542)" }} />
+            </div>
+            <div className="relative mt-5 grid grid-cols-2 gap-2 md:grid-cols-4">
+              {TOPIC_PAGES.map((item, index) => (
+                <button key={item.id} onClick={() => navigate(item.path)} className="flex items-center gap-2 rounded-lg px-3 py-3 text-left transition-all duration-200" style={{ background: "rgba(7,27,42,0.78)", border: "1px solid rgba(0,231,224,0.12)" }}>
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: item.color, boxShadow: `0 0 7px ${item.color}` }} />
+                  <span className="min-w-0"><span className="block tabular-nums" style={{ color: "rgba(159,195,202,0.48)", fontFamily: "'IBM Plex Mono', monospace", fontSize: "7px" }}>{String(index + 1).padStart(2, "0")}</span><span className="block truncate font-bold" style={{ color: "#EAFBFF", fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px" }}>{item.label}</span></span>
+                </button>
+              ))}
+            </div>
+          </main>
+          <Footer />
         </div>
       </div>
     );
@@ -295,8 +342,8 @@ export default function TopicPage() {
               fontFamily: "'Space Grotesk', sans-serif",
             }}
           >
-            <span>{topic.emoji}</span>
-            {topic.label}
+            <span className="h-1.5 w-1.5 rounded-full" style={{ background: topic.color, boxShadow: `0 0 7px ${topic.color}` }} aria-hidden="true" />
+            <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px" }}>{topic.id.toUpperCase()} · ACTIVE</span>
           </div>
 
           <h1
@@ -365,6 +412,8 @@ export default function TopicPage() {
         </div>
       </section>
 
+      <Dawnline index="TOPIC / 01" label="Capability Brief" state="ACTIVE" />
+
       {/* Content sections */}
       <section className="py-16">
         <div className="container max-w-3xl">
@@ -427,7 +476,11 @@ export default function TopicPage() {
               border: `1px solid color-mix(in oklch, ${topic.color} 25%, transparent)`,
             }}
           >
-            <div className="text-4xl mb-4">{topic.emoji}</div>
+            <div className="mb-4 flex items-center justify-center gap-2" aria-hidden="true">
+              <img src={quantumBolt} alt="" className="h-12 w-12" />
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: topic.color, boxShadow: `0 0 8px ${topic.color}` }} />
+              <span className="font-bold uppercase tracking-[0.2em]" style={{ color: topic.color, fontFamily: "'IBM Plex Mono', monospace", fontSize: "8px" }}>Capability Ready</span>
+            </div>
             <h3
               className="text-xl font-bold mb-3"
               style={{ fontFamily: "'Space Grotesk', sans-serif", color: "oklch(0.93 0.02 175)" }}
@@ -438,7 +491,7 @@ export default function TopicPage() {
               className="text-sm mb-6"
               style={{ color: "oklch(0.55 0.06 175)", fontFamily: "'DM Sans', sans-serif" }}
             >
-              Join the DBR AI Leverage Lab — live weekly training, real demos, homework that makes you money.
+              Join AI Leverage Lab — live weekly training, real demos, and practical homework designed to help you build more business.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
@@ -470,6 +523,8 @@ export default function TopicPage() {
         </div>
       </section>
 
+      <Dawnline index="TOPIC / 02" label="Action Protocol" state="COMPLETE" warm />
+
       {/* Other topics nav */}
       <section className="py-12" style={{ background: "oklch(0.09 0.022 240)" }}>
         <div className="container">
@@ -480,7 +535,7 @@ export default function TopicPage() {
             Explore Other Topics
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
-            {TOPIC_PAGES.filter((t) => t.id !== topicId).map((t) => (
+            {TOPIC_PAGES.filter((t) => t.id !== topicId).map((t, index) => (
               <button
                 key={t.id}
                 onClick={() => navigate(t.path)}
@@ -500,7 +555,10 @@ export default function TopicPage() {
                   el.style.transform = "translateY(0)";
                 }}
               >
-                <span className="text-xl">{t.emoji}</span>
+                <span className="flex items-center gap-1.5" aria-hidden="true">
+                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: t.color, boxShadow: `0 0 7px ${t.color}` }} />
+                  <span className="tabular-nums" style={{ color: "rgba(159,195,202,0.56)", fontFamily: "'IBM Plex Mono', monospace", fontSize: "8px" }}>{String(index + 1).padStart(2, "0")}</span>
+                </span>
                 <span className="text-xs font-bold" style={{ color: t.color, fontFamily: "'Space Grotesk', sans-serif" }}>
                   {t.label}
                 </span>

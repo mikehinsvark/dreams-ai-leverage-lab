@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Download, ChevronDown } from "lucide-react";
 import { useLocation } from "wouter";
 import { PDF_URLS, TOPIC_PAGES } from "@/lib/constants";
+import brandLogo from "@/assets/brand/ai-leverage-lab-logo-dark.svg";
 
 const mainLinks = [
   { label: "About", href: "#about" },
@@ -61,37 +62,23 @@ export default function Navbar() {
       }}
     >
       <div className="container">
-        <div className="flex items-center justify-between h-14">
-          {/* Logo */}
+        <div className="flex h-[68px] items-center justify-between md:h-[72px]">
+          {/* Quantum Bolt brand lockup — official dark-header artwork. */}
           <button
+            type="button"
+            aria-label="AI Leverage Lab home"
             onClick={() => navigate("/")}
-            className="flex items-center gap-3"
+            className="group shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00E7E0]/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#03090D]"
           >
-            <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center text-xs font-black"
-              style={{
-                background: "linear-gradient(135deg, oklch(0.78 0.15 175), oklch(0.68 0.15 175))",
-                color: "oklch(0.08 0.02 240)",
-                boxShadow: "0 0 16px oklch(0.78 0.15 175 / 0.4)",
-              }}
-            >
-              DBR
-            </div>
-            <div>
-              <div
-                className="text-sm font-bold leading-none"
-                style={{ fontFamily: "'Space Grotesk', sans-serif", color: "oklch(0.78 0.15 175)" }}
-              >
-                AI Leverage Lab™
-              </div>
-              <div className="text-xs leading-none mt-0.5" style={{ color: "oklch(0.45 0.04 175)" }}>
-                Dreams Business Resources
-              </div>
-            </div>
+            <img
+              src={brandLogo}
+              alt="AI Leverage Lab — While You Sleep"
+              className="h-auto w-[230px] transition-opacity duration-200 group-hover:opacity-90 sm:w-[260px]"
+            />
           </button>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-5">
+          <nav className="hidden items-center gap-4 xl:flex">
             {mainLinks.map((link) => (
               <button
                 key={link.href}
@@ -218,7 +205,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden p-2"
+            className="xl:hidden p-2"
             style={{ color: "oklch(0.78 0.15 175)" }}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
@@ -230,7 +217,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div
-          className="lg:hidden border-t"
+          className="xl:hidden border-t"
           style={{
             background: "oklch(0.08 0.02 240 / 0.98)",
             borderColor: "oklch(0.78 0.15 175 / 0.15)",

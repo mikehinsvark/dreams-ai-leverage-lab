@@ -1,10 +1,10 @@
 // ============================================================
-// Dreams AI Leverage Lab — Shared Constants
+// AI Leverage Lab — Shared Constants
 // ============================================================
 
 export const PDF_URLS = {
-  starterGuide: "/manus-storage/DBR-AI-Starter-Guide_04d26306.pdf",
-  week1Deck: "/manus-storage/DBR-AI-Accelerator-Week1-Deck_0e999ae4.pdf",
+  starterGuide: "/pdfs/DBR-AI-Starter-Guide.pdf",
+  week1Deck: "/pdfs/DBR-AI-Accelerator-Week1-Deck.pdf",
 };
 
 export const TOPIC_PAGES = [

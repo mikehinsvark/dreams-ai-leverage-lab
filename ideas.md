@@ -70,3 +70,7 @@ The route uses the existing AI Leverage Lab wordmark for parent-brand trust plus
 - Give each session a deep-linkable hash and persistent navigation state.
 - Provide a back-to-top/scroll control for the long-form training experience.
 - Do not use fabricated reviews, ratings, or testimonials.
+- Make the Dawnline a visible structural progress horizon across every major long-form page, using Dawn Current teal for active sectors and signal gold only at leverage or completion moments.
+- Replace casual emoji decoration in primary navigation and route states with a fixed operations vocabulary: Agent Pips, tabular sector numbers, concise status labels, and restrained system glyphs.
+- Treat centered card grids as supporting content; use asymmetric command panels, recovery consoles, side rails, and stepped sector transitions for primary page structure.
+- Keep invalid and fallback routes inside the full Quantum Bolt brand world with operational language, clear recovery actions, and the same premium command-deck surfaces as successful routes.

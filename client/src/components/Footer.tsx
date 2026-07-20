@@ -1,3 +1,6 @@
+/* Electric Blueprint × Quantum Bolt footer: official brand lockup, restrained cyan accents, and clear DBR parent-company attribution. */
+import brandLogo from "@/assets/brand/ai-leverage-lab-logo-dark.svg";
+
 const footerLinks = [
   { label: "Fast Start", href: "https://dreamsfaststart.com" },
   { label: "Renewals For Life", href: "https://renewalsforlife.com/" },
@@ -15,24 +18,24 @@ export default function Footer() {
     >
       <div className="container py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Brand */}
+          {/* Quantum Bolt brand */}
           <div className="text-center md:text-left">
-            <div
-              className="text-xl font-black mb-1"
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                color: "oklch(0.78 0.15 175)",
-                textShadow: "0 0 16px oklch(0.78 0.15 175 / 0.4)",
-                letterSpacing: "0.06em",
-              }}
+            <a
+              href="/"
+              aria-label="AI Leverage Lab home"
+              className="inline-block rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00E7E0]/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#03090D]"
             >
-              DBR AI LEVERAGE LAB™
-            </div>
+              <img
+                src={brandLogo}
+                alt="AI Leverage Lab — While You Sleep"
+                className="h-auto w-[280px] max-w-full"
+              />
+            </a>
             <div
-              className="text-xs"
+              className="mt-1 text-xs"
               style={{ color: "oklch(0.45 0.04 175)", fontFamily: "'DM Sans', sans-serif" }}
             >
-              Dreams Business Resources · dreamsfaststart.com
+              A Dreams Business Resources innovation · dreamsfaststart.com
             </div>
           </div>
 

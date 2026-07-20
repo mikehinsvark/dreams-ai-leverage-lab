@@ -10,12 +10,13 @@ import B2BSection from "@/components/sections/B2BSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/Footer";
 import SectionScrollNav from "@/components/SectionScrollNav";
+import Dawnline from "@/components/Dawnline";
 
 export default function Home() {
   return (
     // Outer shell: very dark navy gutter fills the viewport
     <div
-      className="min-h-screen"
+      className="home-page min-h-screen"
       style={{ background: "oklch(0.045 0.015 240)" }}
     >
       {/* Boxed inner frame: centered, max-width, with subtle border */}
@@ -37,13 +38,21 @@ export default function Home() {
         >
           <Navbar />
           <div id="hero"><HeroSection /></div>
+          <Dawnline index="01" label="Operating Model" state="ACTIVE" />
           <AboutSection />
+          <Dawnline index="02" label="Operator Profile" state="READY" />
           <WhoSection />
+          <Dawnline index="03" label="Capability Stack" state="READY" />
           <MasterSection />
+          <Dawnline index="04" label="Weekly Rhythm" state="SCHEDULED" />
           <HowItWorksSection />
+          <Dawnline index="05" label="Training Sequence" state="SCHEDULED" />
           <CurriculumSection />
+          <Dawnline index="06" label="Tool Systems" state="ACTIVE" />
           <ToolStackSection />
+          <Dawnline index="07" label="Leverage Path" state="READY" warm />
           <B2BSection />
+          <Dawnline index="08" label="Launch Protocol" state="COMPLETE" warm />
           <CTASection />
           <Footer />
         </div>

@@ -90,3 +90,31 @@
 - [x] Verify the change is immediately visible on desktop while preserving mobile readability and sticky navigation.
 - [x] Sync and checkpoint the managed preview project.
 - [x] Publish the route-only release and verify the live custom-domain page and homepage carousel.
+
+## Reusable While You Sleep Maintenance Skill
+
+- [x] Extract the proven maintenance, QA, release, and credential-handling workflow from the completed project.
+- [x] Initialize a dedicated reusable skill package with concise progressive disclosure.
+- [x] Add deterministic release/verification resources and project-specific references without duplicating existing guidance.
+- [x] Validate the skill package and test its reusable scripts or commands.
+- [x] Deliver the packaged skill for installation through My Skills.
+
+## Install While You Sleep Skill in My Skills
+
+- [x] Reconfirm the packaged skill ZIP is valid and available for upload.
+- [x] Open the authenticated Manus My Skills settings.
+- [x] Upload `while-you-sleep-maintenance.skill.zip` and confirm the account accepts it.
+- [x] Verify `while-you-sleep-maintenance` appears in My Skills.
+- [x] Use the verified user-side Skills page after the browser connection card did not appear.
+- [x] Determine whether a supported direct account API or authenticated settings URL can install a custom skill without the missing browser card.
+- [x] Deliver the shortest verified manual upload flow with the validated ZIP attached when no upload API was available.
+
+## AI Leverage Lab Homepage Rebrand and Navigation Repair
+
+- [x] Audit the supplied logo package, canonical source branch, live homepage bundle, managed preview divergence, and While You Sleep back-link destination.
+- [x] Replace “The DBR AI Leverage Lab” with “AI Leverage Lab” in the homepage hero and supporting metadata where appropriate.
+- [x] Integrate the new primary logo and brand icon into the header, hero, and favicon treatment while preserving contrast and responsiveness.
+- [x] Repair the While You Sleep “Back to AI Leverage Lab” action so it opens the current live homepage rather than a stale local route.
+- [x] Validate the refreshed homepage and While You Sleep route on desktop and mobile, including navigation, assets, downloads, and carousel behavior.
+- [ ] Synchronize the managed preview where appropriate, checkpoint the work, and publish the canonical GitHub-backed release without overwriting preserved routes.
+- [x] Complete all live-site auditing and verification through public URLs and repository access; do not request Manus browser authorization for this website update.

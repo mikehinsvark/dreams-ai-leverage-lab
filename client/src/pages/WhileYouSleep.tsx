@@ -31,14 +31,14 @@ import {
   Workflow,
   Zap,
 } from "lucide-react";
-import { useLocation } from "wouter";
 import heroArt from "@/assets/while-you-sleep/while-you-sleep-hero.webp";
 import nightShiftArt from "@/assets/while-you-sleep/while-you-sleep-night-shift.webp";
 import duplicateArt from "@/assets/while-you-sleep/while-you-sleep-duplicate.webp";
-import eclipseBolt from "@/assets/while-you-sleep/while-you-sleep-eclipse-bolt.png";
+import quantumBolt from "@/assets/brand/ai-leverage-lab-icon.svg";
 import "./while-you-sleep.css";
 
 const CLAUDE_REFERRAL_URL = "https://claude.ai/referral/UhFq2KPTiQ?s=cowork&v=apps";
+const AI_LEVERAGE_LAB_HOME_URL = "https://aileveragelab.pro/";
 
 const sessions = [
   { id: "journey", short: "Overview", label: "The 3-Week Journey", number: "00" },
@@ -176,7 +176,6 @@ function SectionHeading({ kicker, title, intro }: { kicker: string; title: strin
 }
 
 export default function WhileYouSleep() {
-  const [, navigate] = useLocation();
   const [activeSection, setActiveSection] = useState("journey");
   const [scrollProgress, setScrollProgress] = useState(0);
   const sessionIds = useMemo(() => sessions.map((session) => session.id), []);
@@ -235,15 +234,15 @@ export default function WhileYouSleep() {
 
       <header className="wys-topbar">
         <div className="wys-shell wys-topbar__inner">
-          <button className="wys-brand" type="button" onClick={() => navigate("/")}>
-            <span className="wys-brand__mark"><img src={eclipseBolt} alt="" /></span>
+          <a className="wys-brand" href={AI_LEVERAGE_LAB_HOME_URL} aria-label="Return to the live AI Leverage Lab homepage">
+            <span className="wys-brand__mark"><img src={quantumBolt} alt="" /></span>
             <span>
               <strong>AI Leverage Lab™</strong>
               <small>While You Sleep</small>
             </span>
-          </button>
+          </a>
           <nav aria-label="While You Sleep sections">
-            <button type="button" onClick={() => navigate("/")}><ArrowLeft size={15} /> Main Lab</button>
+            <a className="wys-home-link" href={AI_LEVERAGE_LAB_HOME_URL}><ArrowLeft size={15} /> Main Lab</a>
             <a href={CLAUDE_REFERRAL_URL} target="_blank" rel="noreferrer" className="wys-button wys-button--small">
               Get Claude Desktop <ExternalLink size={14} />
             </a>
@@ -280,7 +279,7 @@ export default function WhileYouSleep() {
               <div className="wys-command__core">
                 <div className="wys-command__orbit wys-command__orbit--one" />
                 <div className="wys-command__orbit wys-command__orbit--two" />
-                <div className="wys-command__hub"><img src={eclipseBolt} alt="" /></div>
+                <div className="wys-command__hub"><img src={quantumBolt} alt="" /></div>
                 {agents.slice(0, 4).map((agent, index) => {
                   const Icon = agent.icon;
                   return <span key={agent.name} className={`wys-command__node wys-command__node--${index + 1}`}><Icon size={16} /></span>;
@@ -454,8 +453,8 @@ export default function WhileYouSleep() {
 
       <footer className="wys-footer">
         <div className="wys-shell">
-          <div><button type="button" className="wys-brand" onClick={() => navigate("/")}><span className="wys-brand__mark"><img src={eclipseBolt} alt="" /></span><span><strong>AI Leverage Lab™</strong><small>Dreams Business Resources</small></span></button><p>Practical AI leverage for leaders building sales, recruiting, and B2B distribution teams.</p></div>
-          <nav><button type="button" onClick={() => navigate("/")}>AI Leverage Lab Home</button><a href="https://dreams.ceo">Dreams Business Resources</a><a href="mailto:mikeceo@gmail.com">Contact Mike</a></nav>
+          <div><a className="wys-brand" href={AI_LEVERAGE_LAB_HOME_URL} aria-label="Return to the live AI Leverage Lab homepage"><span className="wys-brand__mark"><img src={quantumBolt} alt="" /></span><span><strong>AI Leverage Lab™</strong><small>Dreams Business Resources</small></span></a><p>Practical AI leverage for leaders building sales, recruiting, and B2B distribution teams.</p></div>
+          <nav><a href={AI_LEVERAGE_LAB_HOME_URL}>AI Leverage Lab Home</a><a href="https://dreams.ceo">Dreams Business Resources</a><a href="mailto:mikeceo@gmail.com">Contact Mike</a></nav>
         </div>
         <div className="wys-shell wys-footer__legal">© 2026 Dreams Business Resources · Mike Hinsvark, Senior Agency Partner. Educational use only. Claude, Cowork, Gmail, Google Calendar, and Calendly are trademarks of their respective owners; DBR is not affiliated with or endorsed by them. Income results vary.</div>
       </footer>
