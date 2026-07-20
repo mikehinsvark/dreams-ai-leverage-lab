@@ -128,4 +128,12 @@
 - [x] Rebuild the hero as a premium asymmetric command-center composition inspired by the supplied sample, including strong typography, operational status details, primary/secondary CTAs, and a custom visual focal point.
 - [x] Preserve the existing registration destination, downstream content, and all unrelated homepage, While You Sleep, topic, Genie, and PDF routes.
 - [x] Synchronize the managed preview and validate desktop/mobile layout, navigation, CTA behavior, asset loading, and overflow.
-- [ ] Checkpoint the reviewed managed project, publish the canonical GitHub Pages release, and verify the live custom-domain page.
+- [x] Checkpoint the reviewed managed project, publish the canonical GitHub Pages release, and verify the live custom-domain page.
+
+## Save My Seat Compact Hero Scale
+
+- [x] Audit the current desktop and responsive hero type, control, artwork, and metric-band dimensions against the supplied AI Leverage Lab reference screenshots.
+- [x] Reduce the hero headline, body copy, status capsule, CTA controls, visual frame, and metric rail to the established compact site proportions without changing copy or destinations.
+- [x] Preserve mobile readability, registration behavior, downstream sections, and unrelated routes.
+- [x] Synchronize the managed preview and validate desktop/mobile first-fold balance, image crop, anchors, and overflow.
+- [ ] Checkpoint the reviewed revision, publish the canonical GitHub Pages update, and verify the compact hero on the live custom domain.
