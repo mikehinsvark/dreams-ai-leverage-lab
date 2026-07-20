@@ -153,4 +153,4 @@
 - [x] Add a crisp branded Quantum Bolt favicon for browser tabs and bookmarks.
 - [x] Preserve the boxed large-monitor canvas, responsive mobile layout, content, anchors, buttons, and unrelated site routes.
 - [x] Synchronize the managed preview and validate desktop/mobile spacing, favicon delivery, interactions, and overflow.
-- [ ] Checkpoint, publish the canonical GitHub Pages update, and verify the live Genies page and preserved routes.
+- [x] Checkpoint, publish the canonical GitHub Pages update, and verify the live Genies page and preserved routes.
