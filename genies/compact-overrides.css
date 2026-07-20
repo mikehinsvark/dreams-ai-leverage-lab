@@ -1,0 +1,77 @@
+/*
+ * Electric Blueprint — Genies compact vertical rhythm
+ * Goal: remove macro dead space between major systems while preserving the boxed command-center composition,
+ * card interiors, typography, anchors, and mobile readability.
+ */
+
+:root {
+  --genie-section-pad-mobile: 3.5rem;
+  --genie-section-pad-desktop: 4rem;
+  --genie-heading-gap-mobile: 2rem;
+  --genie-heading-gap-desktop: 2.25rem;
+}
+
+/* Keep the hero cinematic, but reveal the first system sooner. */
+#top {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.25rem !important;
+}
+
+/* The original system sections used 5rem mobile / 7rem desktop on both edges. */
+#genies,
+#loop,
+#framework,
+#integrations,
+#flow {
+  padding-top: var(--genie-section-pad-mobile) !important;
+  padding-bottom: var(--genie-section-pad-mobile) !important;
+}
+
+/* Tighten only the masthead-to-content handoff; preserve the component interiors below. */
+#genies > .content-frame > :first-child > .reveal,
+#loop > .content-frame > :first-child > .reveal,
+#framework > .content-frame > :first-child > .reveal,
+#integrations > .content-frame > :first-child > .reveal,
+#flow > .content-frame > :first-child > .reveal {
+  margin-bottom: var(--genie-heading-gap-mobile) !important;
+}
+
+/* The final conversion sequence carried three separate 4rem gaps. */
+#flow > .content-frame > .value-callout,
+#flow > .content-frame > .glass-panel {
+  margin-top: 2.5rem !important;
+}
+
+#flow > .content-frame > aside {
+  margin-top: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  #top {
+    padding-top: 3rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  #genies,
+  #loop,
+  #framework,
+  #integrations,
+  #flow {
+    padding-top: var(--genie-section-pad-desktop) !important;
+    padding-bottom: var(--genie-section-pad-desktop) !important;
+  }
+
+  #genies > .content-frame > :first-child > .reveal,
+  #loop > .content-frame > :first-child > .reveal,
+  #framework > .content-frame > :first-child > .reveal,
+  #integrations > .content-frame > :first-child > .reveal,
+  #flow > .content-frame > :first-child > .reveal {
+    margin-bottom: var(--genie-heading-gap-desktop) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+}
