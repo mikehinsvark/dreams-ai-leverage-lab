@@ -145,3 +145,12 @@
 - [x] Preserve fluid tablet/mobile behavior, registration controls, anchors, imagery, and all downstream content.
 - [x] Synchronize the managed preview and validate the boxed composition at wide desktop, standard desktop, and mobile widths.
 - [x] Checkpoint, publish the canonical GitHub Pages update, and verify the live custom-domain page and preserved routes.
+
+## Genies Compact Vertical Rhythm and Favicon
+
+- [x] Load the While You Sleep maintenance workflow and audit the live `/genies/` page, source spacing system, and favicon configuration.
+- [x] Reduce excessive vertical gaps between the Genies hero and every major downstream section while preserving intentional breathing room.
+- [x] Add a crisp branded Quantum Bolt favicon for browser tabs and bookmarks.
+- [x] Preserve the boxed large-monitor canvas, responsive mobile layout, content, anchors, buttons, and unrelated site routes.
+- [x] Synchronize the managed preview and validate desktop/mobile spacing, favicon delivery, interactions, and overflow.
+- [ ] Checkpoint, publish the canonical GitHub Pages update, and verify the live Genies page and preserved routes.

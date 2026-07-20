@@ -8,178 +8,45 @@
       name="description"
       content="Meet the AI Genie Team and explore the integrations that keep your business moving around the clock."
     />
-    <link rel="canonical" href="https://aileveragelab.pro/genies" />
+    <link rel="canonical" href="https://aileveragelab.pro/genies/" />
     <meta property="og:title" content="AI Genie Team | AI Leverage Lab" />
     <meta
       property="og:description"
       content="Explore the AI Genie Team integrations for always-on sales, recruiting, and business execution."
     />
-    <meta property="og:url" content="https://aileveragelab.pro/genies" />
+    <meta property="og:url" content="https://aileveragelab.pro/genies/" />
     <meta name="theme-color" content="#04070f" />
-    <style>
-      /* Electric Blueprint bridge: keep the clean Lab URL while the AI Genie experience fills the viewport. */
-      :root {
-        --lab-nav-height: 3.6rem;
-        color-scheme: dark;
-        background: #04070f;
-        font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
-      }
-      * { box-sizing: border-box; }
-      html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #04070f; }
-      body { display: flex; flex-direction: column; }
-      .genie-frame {
-        width: 100%;
-        min-height: 0;
-        flex: 1 1 auto;
-        border: 0;
-        display: block;
-        background: #04070f;
-      }
-      .lab-return-bar {
-        position: relative;
-        z-index: 3;
-        display: flex;
-        flex: 0 0 var(--lab-nav-height);
-        align-items: center;
-        padding: 0 calc(1rem + env(safe-area-inset-right)) 0 calc(1rem + env(safe-area-inset-left));
-        border-bottom: 1px solid rgba(143, 245, 223, .13);
-        background:
-          linear-gradient(90deg, rgba(0, 214, 178, .07), transparent 34%),
-          rgba(4, 7, 15, .96);
-        box-shadow: 0 10px 34px rgba(0, 0, 0, .28);
-      }
-      .lab-return {
-        display: inline-flex;
-        align-items: center;
-        gap: .58rem;
-        min-height: 2.75rem;
-        padding: .7rem 1rem;
-        border: 1px solid rgba(143, 245, 223, .34);
-        border-radius: 999px;
-        color: #d7fff6;
-        background: rgba(4, 7, 15, .88);
-        box-shadow: 0 0 22px rgba(0, 214, 178, .14);
-        -webkit-backdrop-filter: blur(14px);
-        backdrop-filter: blur(14px);
-        font-size: .78rem;
-        font-weight: 700;
-        letter-spacing: .025em;
-        line-height: 1;
-        text-decoration: none;
-        transition:
-          transform 180ms cubic-bezier(.23, 1, .32, 1),
-          border-color 180ms cubic-bezier(.23, 1, .32, 1),
-          background-color 180ms cubic-bezier(.23, 1, .32, 1),
-          box-shadow 180ms cubic-bezier(.23, 1, .32, 1);
-      }
-      .lab-return__icon {
-        display: inline-grid;
-        width: 1.35rem;
-        height: 1.35rem;
-        place-items: center;
-        border-radius: 999px;
-        color: #04070f;
-        background: #00d6b2;
-        box-shadow: 0 0 14px rgba(0, 214, 178, .38);
-        font-size: 1rem;
-        transition: transform 180ms cubic-bezier(.23, 1, .32, 1);
-      }
-      .lab-return:hover {
-        transform: translateY(-1px) scale(1.02);
-        border-color: rgba(143, 245, 223, .72);
-        background: rgba(7, 20, 28, .94);
-        box-shadow: 0 0 28px rgba(0, 214, 178, .25);
-      }
-      .lab-return:hover .lab-return__icon { transform: translateX(-3px); }
-      .lab-return:active { transform: scale(.97); }
-      .lab-return:focus-visible {
-        outline: 2px solid #eba941;
-        outline-offset: 3px;
-      }
-      .loading {
-        position: fixed;
-        inset: var(--lab-nav-height) 0 0;
-        display: grid;
-        place-items: center;
-        z-index: 1;
-        color: #8ff5df;
-        background:
-          radial-gradient(circle at 50% 35%, rgba(0, 214, 178, .13), transparent 38%),
-          #04070f;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-        font-size: .78rem;
-        transition: opacity 180ms cubic-bezier(.23, 1, .32, 1), visibility 180ms;
-      }
-      .loading::before {
-        content: "";
-        width: 2.25rem;
-        height: 2.25rem;
-        margin-right: .8rem;
-        border: 2px solid rgba(143, 245, 223, .22);
-        border-top-color: #00d6b2;
-        border-radius: 999px;
-        animation: spin .8s linear infinite;
-      }
-      .loading.hidden { opacity: 0; visibility: hidden; }
-      @keyframes spin { to { transform: rotate(360deg); } }
-      @media (max-width: 520px) {
-        :root { --lab-nav-height: 3.35rem; }
-        .lab-return-bar {
-          padding-right: calc(.75rem + env(safe-area-inset-right));
-          padding-left: calc(.75rem + env(safe-area-inset-left));
-        }
-        .lab-return {
-          min-height: 2.45rem;
-          padding: .6rem .82rem;
-          font-size: .72rem;
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .loading::before { animation: none; }
-        .lab-return,
-        .lab-return__icon { transition: none; }
-        .lab-return:hover,
-        .lab-return:hover .lab-return__icon { transform: none; }
-      }
-    </style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./genie-app.css" />
+    <link rel="stylesheet" href="./compact-overrides.css" />
+    <script type="module" src="./genie-app.js"></script>
   </head>
   <body>
-    <nav class="lab-return-bar" aria-label="AI Genie navigation">
-      <a class="lab-return" href="/" aria-label="Back to AI Leverage Lab home">
-        <span class="lab-return__icon" aria-hidden="true">←</span>
-        <span>Back to AI Leverage Lab</span>
-      </a>
-    </nav>
-    <div class="loading" id="loading" aria-live="polite">Opening AI Genie Team</div>
-    <iframe
-      class="genie-frame"
-      id="genie-frame"
-      src="https://aigenieblue-dreams.manus.space/"
-      title="AI Genie Team integrations"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="clipboard-read; clipboard-write; fullscreen"
-    ></iframe>
+    <div id="root"></div>
     <noscript>
-      <p>
-        <a href="https://aigenieblue-dreams.manus.space/">Open the AI Genie Team page</a>
+      <p style="margin: 0; padding: 2rem; color: #d7fff6; background: #04070f; font-family: system-ui, sans-serif;">
+        JavaScript is required to open the AI Genie Team experience.
       </p>
     </noscript>
     <script>
-      (() => {
-        const frame = document.getElementById('genie-frame');
-        const loading = document.getElementById('loading');
-
-        frame.addEventListener('load', () => {
-          window.setTimeout(() => loading.classList.add('hidden'), 350);
-        }, { once: true });
-
-        window.addEventListener('pageshow', (event) => {
-          if (event.persisted) frame.src = 'https://aigenieblue-dreams.manus.space/';
-        });
-
-        window.setTimeout(() => loading.classList.add('hidden'), 5000);
-      })();
+      /* Keep the approved internal design intact while making the brand lockup an escape route to the main Lab. */
+      document.addEventListener(
+        "click",
+        (event) => {
+          const brand = event.target.closest('a[aria-label="AI Genie Blueprint home"]');
+          if (!brand) return;
+          event.preventDefault();
+          window.location.assign("/");
+        },
+        true,
+      );
     </script>
   </body>
 </html>
