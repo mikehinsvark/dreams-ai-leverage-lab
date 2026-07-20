@@ -74,3 +74,15 @@ The route uses the existing AI Leverage Lab wordmark for parent-brand trust plus
 - Replace casual emoji decoration in primary navigation and route states with a fixed operations vocabulary: Agent Pips, tabular sector numbers, concise status labels, and restrained system glyphs.
 - Treat centered card grids as supporting content; use asymmetric command panels, recovery consoles, side rails, and stepped sector transitions for primary page structure.
 - Keep invalid and fallback routes inside the full Quantum Bolt brand world with operational language, clear recovery actions, and the same premium command-deck surfaces as successful routes.
+
+## Save My Seat Reference Specification — 2026-07-20
+
+The user-supplied 1920×1080 screenshot is the **ground-truth composition** for the `/savemyseat/` navigation and hero. Fidelity to its hierarchy overrides alternative concept exploration. The page must use the official horizontal AI Leverage Lab Quantum Bolt lockup in a slim dark header, compact uppercase anchor navigation, and a restrained outlined Save My Seat action.
+
+The hero must become an asymmetric cinematic command deck: a left editorial column with an active-training status capsule, the exact promise “You Don’t Need to Learn AI. You Need to Put It to Work.,” a practical audience paragraph, primary and secondary actions, and a concise no-coding/no-tech/guided-training proof line; the right side must feature a custom no-text futuristic AI orchestration hub with transparent glass interface panels, orbital network energy, cyan/azure light, a small signal-gold accent, and deep midnight negative space. A wide four-stat rail anchors the composition beneath both columns. The custom visual must contain no generated words, logos, faces, or product UI copy; all exact copy remains accessible HTML.
+
+On mobile, the editorial content must remain first, the visual must crop deliberately rather than create horizontal overflow, the full AI Leverage Lab lockup must remain legible, and the four stats must reorganize without becoming a dense card grid. The registration embed, `#register` and `#weeks` targets, downstream curriculum/content, and existing JavaScript counters must remain behaviorally intact.
+- On Save My Seat, treat the 12-week curriculum as the page’s signature mission artifact: encode Foundations → Grow → Automate → Scale as an explicit operational phase rail while preserving the existing week copy and accordion behavior.
+- Use one HUD/status-badge icon vocabulary throughout Save My Seat; replace playful emoji decoration with indexed system glyphs, operational pips, or blueprint line symbols.
+- Reserve Dawn Current teal for active state, progress, and primary actions; reserve signal gold for leverage or completion; use violet only when it identifies a defined category rather than as general decoration.
+- Continue the Eclipse Bolt/Dawnline motif from the hero into section transitions and the final commitment panel so the standalone campaign remains unmistakably part of AI Leverage Lab.

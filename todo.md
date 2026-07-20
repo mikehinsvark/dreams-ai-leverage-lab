@@ -116,7 +116,16 @@
 - [x] Integrate the new primary logo and brand icon into the header, hero, and favicon treatment while preserving contrast and responsiveness.
 - [x] Repair the While You Sleep “Back to AI Leverage Lab” action so it opens the current live homepage rather than a stale local route.
 - [x] Validate the refreshed homepage and While You Sleep route on desktop and mobile, including navigation, assets, downloads, and carousel behavior.
-- [ ] Synchronize the managed preview where appropriate, checkpoint the work, and publish the canonical GitHub-backed release without overwriting preserved routes.
+- [x] Synchronize the managed preview where appropriate, checkpoint the work, and publish the canonical GitHub-backed release without overwriting preserved routes.
 - [x] Complete all live-site auditing and verification through public URLs and repository access; do not request Manus browser authorization for this website update.
-- [ ] Add GitHub Pages-compatible direct entrypoints for dynamic `/topics/*` routes without overwriting the preserved `/whileyousleep`, `/savemyseat`, or `/genies` route artifacts.
-- [ ] Republish and verify direct route loads, Quantum Bolt branding, carousel controls, canonical return links, and both bundled PDF downloads on the custom domain.
+- [x] Add GitHub Pages-compatible direct entrypoints for dynamic `/topics/*` routes without overwriting the preserved `/whileyousleep`, `/savemyseat`, or `/genies` route artifacts.
+- [x] Republish and verify direct route loads, Quantum Bolt branding, carousel controls, canonical return links, and both bundled PDF downloads on the custom domain.
+
+## Save My Seat Quantum Bolt Hero Redesign
+
+- [x] Audit the current `/savemyseat/` source, live registration flow, supplied reference composition, and official Quantum Bolt brand assets.
+- [x] Replace the Dreams Business Resources logo treatment with the official AI Leverage Lab lockup at an accessible responsive size.
+- [x] Rebuild the hero as a premium asymmetric command-center composition inspired by the supplied sample, including strong typography, operational status details, primary/secondary CTAs, and a custom visual focal point.
+- [x] Preserve the existing registration destination, downstream content, and all unrelated homepage, While You Sleep, topic, Genie, and PDF routes.
+- [x] Synchronize the managed preview and validate desktop/mobile layout, navigation, CTA behavior, asset loading, and overflow.
+- [ ] Checkpoint the reviewed managed project, publish the canonical GitHub Pages release, and verify the live custom-domain page.
