@@ -51,15 +51,31 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--white);
+  background: #000207;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Boxed desktop canvas: matches the 1100px AI Leverage Lab homepage frame. */
+.site-canvas {
+  position: relative;
+  width: min(100%, 1100px);
+  min-height: 100vh;
+  margin-inline: auto;
   background:
     radial-gradient(80% 50% at 50% -10%, rgba(22,119,255,.10), transparent 60%),
     linear-gradient(rgba(0,216,255,.024) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0,216,255,.024) 1px, transparent 1px),
     #000509;
   background-size: 100% 100%, 44px 44px, 44px 44px, auto;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
+  border-inline: 1px solid rgba(0,216,255,.08);
+  box-shadow: 0 0 80px rgba(0,8,20,.86);
+}
+
+@media (max-width: 1100px) {
+  .site-canvas { border-inline: 0; box-shadow: none; }
 }
 
 h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; }
@@ -146,8 +162,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; }
 /* ── HERO — REFERENCE-DRIVEN COMMAND DECK ── */
 .hero {
   position: relative; isolation: isolate; overflow: hidden;
-  margin: 0 calc(50% - 50vw) 2.1rem;
-  padding: 0 max(1.5rem, calc((100vw - 1170px) / 2));
+  margin: 0 -1.5rem 2.1rem;
+  padding: 0 clamp(1.5rem, 3vw, 2.5rem);
   min-height: 610px;
   border-bottom: 1px solid rgba(0,216,255,.12);
   background: #000509;
@@ -187,7 +203,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; }
 .hero-proof span { display: inline-flex; align-items: center; gap: 7px; }
 .hero-proof span::before { content: ''; width: 12px; height: 1px; background: var(--gold); box-shadow: 0 0 6px rgba(255,200,61,.45); }
 .hero-engine-card {
-  position: absolute; right: max(1.5rem, calc((100vw - 1170px) / 2)); bottom: 108px; z-index: 2;
+  position: absolute; right: clamp(1.5rem, 3vw, 2.5rem); bottom: 108px; z-index: 2;
   width: min(320px, 27vw); padding: 12px 15px;
   background: rgba(2,14,25,.86); border: 1px solid rgba(0,216,255,.34); border-radius: 12px;
   box-shadow: 0 14px 44px rgba(0,0,0,.35), inset 0 0 28px rgba(0,216,255,.045); backdrop-filter: blur(16px);
@@ -220,7 +236,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; }
 }
 @media (max-width: 560px) {
   .page { padding-inline: 1rem; }
-  .hero { padding-inline: 1rem; }
+  .hero { margin-inline: -1rem; padding-inline: 1rem; }
   .hero-copy { padding-top: 2rem; }
   .hero h1 { font-size: clamp(32px, 10.4vw, 42px); letter-spacing: -1.4px; }
   .hero-sub { font-size: 14px; }
@@ -498,7 +514,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; }
 
 /* ── BACK TO TOP ── */
 .to-top {
-  position: fixed; right: 22px; bottom: 22px; z-index: 90;
+  position: fixed; right: max(22px, calc((100vw - 1100px) / 2 + 22px)); bottom: 22px; z-index: 90;
   width: 44px; height: 44px; border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
   background: rgba(0,216,255,.08); border: 1px solid rgba(0,216,255,.4);
@@ -816,6 +832,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; }
 </head>
 <body id="top">
 
+<div class="site-canvas">
 <nav class="navbar">
   <a class="nav-brand" href="/" aria-label="Back to AI Leverage Lab">
     <img class="nav-logo" src="./ai-leverage-lab-logo-dark.svg" alt="AI Leverage Lab — While You Sleep">
@@ -1161,6 +1178,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; }
     <a href="mailto:mikeceo@gmail.com">mikeceo@gmail.com</a><br>
     All rights reserved. Income results vary. This training material is for educational purposes only. One Ecosystem. Endless Opportunities.
   </div>
+</div>
+
 </div>
 
 <a href="#top" class="to-top" aria-label="Back to top">↑</a>

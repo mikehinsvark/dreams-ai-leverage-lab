@@ -137,3 +137,11 @@
 - [x] Preserve mobile readability, registration behavior, downstream sections, and unrelated routes.
 - [x] Synchronize the managed preview and validate desktop/mobile first-fold balance, image crop, anchors, and overflow.
 - [x] Checkpoint the reviewed revision, publish the canonical GitHub Pages update, and verify the compact hero on the live custom domain.
+
+## Save My Seat Boxed Large-Monitor Canvas
+
+- [x] Audit the current full-width page shell against the supplied boxed AI Genie and AI Leverage Lab examples.
+- [x] Constrain the complete Save My Seat page to a centered desktop canvas with substantial dark side gutters on large monitors.
+- [x] Preserve fluid tablet/mobile behavior, registration controls, anchors, imagery, and all downstream content.
+- [x] Synchronize the managed preview and validate the boxed composition at wide desktop, standard desktop, and mobile widths.
+- [ ] Checkpoint, publish the canonical GitHub Pages update, and verify the live custom-domain page and preserved routes.
