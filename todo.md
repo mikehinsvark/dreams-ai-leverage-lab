@@ -144,4 +144,4 @@
 - [x] Constrain the complete Save My Seat page to a centered desktop canvas with substantial dark side gutters on large monitors.
 - [x] Preserve fluid tablet/mobile behavior, registration controls, anchors, imagery, and all downstream content.
 - [x] Synchronize the managed preview and validate the boxed composition at wide desktop, standard desktop, and mobile widths.
-- [ ] Checkpoint, publish the canonical GitHub Pages update, and verify the live custom-domain page and preserved routes.
+- [x] Checkpoint, publish the canonical GitHub Pages update, and verify the live custom-domain page and preserved routes.
