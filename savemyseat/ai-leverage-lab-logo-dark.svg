@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 360" role="img" aria-labelledby="title desc">
+  <title id="title">AI Leverage Lab horizontal logo for dark backgrounds</title>
+  <desc id="desc">Quantum Bolt icon with the words AI Leverage Lab and the tagline While You Sleep.</desc>
+  <defs>
+    <linearGradient id="orbit" x1="76" y1="96" x2="454" y2="438" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E7E0"/>
+      <stop offset="1" stop-color="#2A8CFF"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="210" y1="110" x2="285" y2="446" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E7E0"/>
+      <stop offset=".52" stop-color="#19B7F4"/>
+      <stop offset="1" stop-color="#2A8CFF"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(18 18) scale(.63)">
+    <path d="M98 292C57 182 125 77 241 68C351 59 444 130 456 239C468 347 395 438 289 451C221 459 158 436 117 392"
+          fill="none" stroke="url(#orbit)" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="420" cy="144" r="15" fill="#F4C542" stroke="#03090D" stroke-width="7"/>
+    <path d="M210 112H281L249 246H367L310 305H365L184 447L230 311H141L202 247H174Z"
+          fill="url(#bolt)"/>
+  </g>
+
+  <g font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="84" font-weight="600" letter-spacing="-2">
+    <text x="360" y="174" fill="#00E7E0">AI</text>
+    <text x="494" y="174" fill="#EAFBFF">Leverage</text>
+    <text x="925" y="174" fill="#00E7E0">Lab</text>
+    <text x="1088" y="118" fill="#00E7E0" font-size="22" letter-spacing="0">™</text>
+  </g>
+  <line x1="360" y1="238" x2="432" y2="238" stroke="#F4C542" stroke-width="4"/>
+  <text x="462" y="250" fill="#9FC3CA" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="27" font-weight="400" letter-spacing="12">WHILE YOU SLEEP</text>
+  <line x1="1002" y1="238" x2="1074" y2="238" stroke="#F4C542" stroke-width="4"/>
+</svg>
