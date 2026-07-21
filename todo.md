@@ -154,3 +154,10 @@
 - [x] Preserve the boxed large-monitor canvas, responsive mobile layout, content, anchors, buttons, and unrelated site routes.
 - [x] Synchronize the managed preview and validate desktop/mobile spacing, favicon delivery, interactions, and overflow.
 - [x] Checkpoint, publish the canonical GitHub Pages update, and verify the live Genies page and preserved routes.
+
+## Save My Seat Quantum Bolt Favicon
+
+- [x] Audit the Save My Seat document head and confirm the shared Quantum Bolt favicon asset.
+- [x] Add the branded favicon to `/savemyseat/` without changing the boxed layout, content, or registration behavior.
+- [x] Synchronize the managed preview and validate favicon delivery, build health, anchors, and responsive integrity.
+- [ ] Checkpoint, publish the canonical GitHub Pages update, and verify the live custom-domain favicon and preserved routes.
