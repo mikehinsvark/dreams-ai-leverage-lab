@@ -160,4 +160,4 @@
 - [x] Audit the Save My Seat document head and confirm the shared Quantum Bolt favicon asset.
 - [x] Add the branded favicon to `/savemyseat/` without changing the boxed layout, content, or registration behavior.
 - [x] Synchronize the managed preview and validate favicon delivery, build health, anchors, and responsive integrity.
-- [ ] Checkpoint, publish the canonical GitHub Pages update, and verify the live custom-domain favicon and preserved routes.
+- [x] Checkpoint, publish the canonical GitHub Pages update, and verify the live custom-domain favicon and preserved routes.
