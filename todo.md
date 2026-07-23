@@ -183,4 +183,4 @@
 - [x] Replace `AI Genie Database` with a canonical `/bundle/` AI Genie Bundle anchor in the shared React footer while leaving neighboring links unchanged.
 - [x] Restore the restrained DBR-gold color, glow, and underline accent without changing footer layout or responsive behavior.
 - [x] Rebuild and verify raw HTML, link targets, desktop/mobile overflow, visual treatment, console health, and preserved static-route audits.
-- [ ] Publish the source and GitHub Pages artifact correction, then verify the live homepage, representative inner routes, and Bundle destination.
+- [x] Publish the source and GitHub Pages artifact correction, then verify the live homepage, representative inner routes, and Bundle destination.
