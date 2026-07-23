@@ -1,7 +1,6 @@
 /* Electric Blueprint navigation: compact, high-contrast, and consistent across desktop and mobile routes. */
 import { useState, useEffect } from "react";
 import { Menu, X, Download, ChevronDown } from "lucide-react";
-import { useLocation } from "wouter";
 import { PDF_URLS, TOPIC_PAGES } from "@/lib/constants";
 import brandLogo from "@/assets/brand/ai-leverage-lab-logo-dark.svg";
 
@@ -16,7 +15,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [topicsOpen, setTopicsOpen] = useState(false);
-  const [, navigate] = useLocation();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -24,28 +22,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const closeMenus = () => {
     setMobileOpen(false);
     setTopicsOpen(false);
-    if (href.startsWith("#")) {
-      // If we're not on home, navigate home first then scroll
-      if (window.location.pathname !== "/") {
-        navigate("/");
-        setTimeout(() => {
-          const el = document.querySelector(href);
-          if (el) el.scrollIntoView({ behavior: "smooth" });
-        }, 200);
-      } else {
-        const el = document.querySelector(href);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
-  const handleTopicClick = (path: string) => {
-    setMobileOpen(false);
-    setTopicsOpen(false);
-    navigate(path);
   };
 
   return (
@@ -64,36 +43,38 @@ export default function Navbar() {
       <div className="container">
         <div className="flex h-[68px] items-center justify-between md:h-[72px]">
           {/* Quantum Bolt brand lockup — official dark-header artwork. */}
-          <button
-            type="button"
+          <a
+            href="/"
             aria-label="AI Leverage Lab home"
-            onClick={() => navigate("/")}
-            className="group shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00E7E0]/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#03090D]"
+            onClick={closeMenus}
+            className="group inline-flex shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00E7E0]/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#03090D]"
           >
             <img
               src={brandLogo}
               alt="AI Leverage Lab — While You Sleep"
               className="h-auto w-[230px] transition-opacity duration-200 group-hover:opacity-90 sm:w-[260px]"
             />
-          </button>
+          </a>
 
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-4 xl:flex">
             {mainLinks.map((link) => (
-              <button
+              <a
                 key={link.href}
-                onClick={() => handleNavClick(link.href)}
+                href={`/${link.href}`}
+                onClick={closeMenus}
                 className="text-sm font-medium transition-colors duration-150"
                 style={{ color: "oklch(0.65 0.04 175)", fontFamily: "'DM Sans', sans-serif" }}
                 onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "oklch(0.78 0.15 175)")}
                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "oklch(0.65 0.04 175)")}
               >
                 {link.label}
-              </button>
+              </a>
             ))}
 
-            <button
-              onClick={() => handleTopicClick("/whileyousleep")}
+            <a
+              href="/whileyousleep/"
+              onClick={closeMenus}
               className="text-sm font-bold transition-all duration-150"
               style={{ color: "oklch(0.78 0.14 75)", fontFamily: "'Space Grotesk', sans-serif" }}
               onMouseEnter={(e) => {
@@ -106,7 +87,7 @@ export default function Navbar() {
               }}
             >
               While You Sleep
-            </button>
+            </a>
 
             {/* Topics dropdown */}
             <div className="relative">
@@ -137,9 +118,10 @@ export default function Navbar() {
                   }}
                 >
                   {TOPIC_PAGES.map((t) => (
-                    <button
+                    <a
                       key={t.id}
-                      onClick={() => handleTopicClick(t.path)}
+                      href={`${t.path}/`}
+                      onClick={closeMenus}
                       className="w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors duration-150"
                       style={{ borderBottom: "1px solid oklch(0.78 0.15 175 / 0.06)" }}
                       onMouseEnter={(e) => {
@@ -158,7 +140,7 @@ export default function Navbar() {
                           {t.desc}
                         </div>
                       </div>
-                    </button>
+                    </a>
                   ))}
                 </div>
               )}
@@ -225,22 +207,24 @@ export default function Navbar() {
         >
           <div className="container py-4 flex flex-col gap-2">
             {mainLinks.map((link) => (
-              <button
+              <a
                 key={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className="text-left text-sm font-medium py-2"
+                href={`/${link.href}`}
+                onClick={closeMenus}
+                className="block text-left text-sm font-medium py-2"
                 style={{ color: "oklch(0.65 0.04 175)", fontFamily: "'DM Sans', sans-serif" }}
               >
                 {link.label}
-              </button>
+              </a>
             ))}
-            <button
-              onClick={() => handleTopicClick("/whileyousleep")}
-              className="text-left text-sm font-bold py-2"
+            <a
+              href="/whileyousleep/"
+              onClick={closeMenus}
+              className="block text-left text-sm font-bold py-2"
               style={{ color: "oklch(0.78 0.14 75)", fontFamily: "'Space Grotesk', sans-serif" }}
             >
               While You Sleep →
-            </button>
+            </a>
             <div
               className="py-2 border-t"
               style={{ borderColor: "oklch(0.78 0.15 175 / 0.1)" }}
@@ -253,9 +237,10 @@ export default function Navbar() {
               </div>
               <div className="grid grid-cols-2 gap-1.5">
                 {TOPIC_PAGES.map((t) => (
-                  <button
+                  <a
                     key={t.id}
-                    onClick={() => handleTopicClick(t.path)}
+                    href={`${t.path}/`}
+                    onClick={closeMenus}
                     className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold text-left"
                     style={{
                       background: `color-mix(in oklch, ${t.color} 8%, transparent)`,
@@ -266,7 +251,7 @@ export default function Navbar() {
                   >
                     <span>{t.emoji}</span>
                     {t.label}
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>

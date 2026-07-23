@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | DBR AI Leverage Lab™ — Frequently Asked Questions</title>
+  <meta name="description" content="Frequently asked questions about the DBR AI Leverage Lab™. Is it really free? Do I need coding skills? What if I miss a class? Who is this for? Get all your answers before you join." />
+  <meta name="keywords" content="AI Leverage Lab FAQ, DBR AI training questions, is AI training free, do I need coding for AI, AI for insurance agents FAQ, DBR accelerator questions, AI course for producers" />
+  <link rel="canonical" href="https://aileveragelab.pro/faq" />
+  <meta property="og:title" content="FAQ | DBR AI Leverage Lab™" />
+  <meta property="og:description" content="All your questions answered before you join. Is it really free? Do I need coding? What if I miss a class? Who is this for?" />
+  <meta property="og:url" content="https://aileveragelab.pro/faq" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #010810;
+      --bg2: #050f1c;
+      --bg3: #0a1628;
+      --teal: #00C9B8;
+      --teal-dim: #00a89a;
+      --teal-glow: rgba(0,201,184,0.15);
+      --white: #f0f4f8;
+      --muted: #8899aa;
+      --border: rgba(0,201,184,0.2);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; }
+
+    header { background: rgba(1,8,16,0.97); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+    .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo-block { display: flex; flex-direction: column; }
+    .logo-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--teal); letter-spacing: 0.05em; }
+    .logo-sub { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
+    nav { display: flex; gap: 6px; flex-wrap: wrap; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.8rem; font-weight: 500; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; letter-spacing: 0.04em; }
+    nav a:hover, nav a.active { color: var(--teal); background: var(--teal-glow); }
+    .nav-cta { background: var(--teal) !important; color: var(--bg) !important; font-weight: 700 !important; border-radius: 8px !important; }
+    .nav-cta:hover { background: var(--teal-dim) !important; }
+
+    .breadcrumb { max-width: 1100px; margin: 0 auto; padding: 16px 24px 0; font-size: 0.8rem; color: var(--muted); }
+    .breadcrumb a { color: var(--teal); text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+
+    .hero { max-width: 1100px; margin: 0 auto; padding: 48px 24px 40px; text-align: center; }
+    .hero-badge { display: inline-block; background: var(--teal-glow); border: 1px solid var(--border); color: var(--teal); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+    .hero h1 span { color: var(--teal); }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 680px; margin: 0 auto; }
+
+    .faq-container { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+    .faq-category { margin-bottom: 48px; }
+    .category-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+
+    /* ACCORDION */
+    .faq-item { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; transition: all 0.3s; }
+    .faq-item:hover { border-color: var(--teal); }
+    .faq-item.open { border-color: var(--teal); box-shadow: 0 0 16px var(--teal-glow); }
+    .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; background: var(--bg2); gap: 16px; }
+    .faq-question:hover { background: var(--bg3); }
+    .faq-q-text { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; color: var(--white); }
+    .faq-toggle { color: var(--teal); font-size: 1.2rem; font-weight: 700; flex-shrink: 0; transition: transform 0.3s; }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+    .faq-answer { display: none; padding: 0 24px 20px; background: var(--bg2); color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-answer strong { color: var(--teal); }
+    .faq-answer a { color: var(--teal); }
+    .faq-answer ul { margin: 12px 0 12px 16px; }
+    .faq-answer ul li { margin-bottom: 6px; }
+    .faq-answer p { margin-bottom: 10px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0 24px; }
+
+    .cta-section { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 48px 32px; text-align: center; margin: 0 24px 48px; max-width: 1052px; margin-left: auto; margin-right: auto; }
+    .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; margin-bottom: 12px; }
+    h2 span { color: var(--teal); }
+    .cta-section p { color: var(--muted); margin-bottom: 28px; }
+    .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--teal); color: var(--bg); font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 14px 28px; border-radius: 10px; text-decoration: none; letter-spacing: 0.05em; transition: all 0.2s; }
+    .btn-primary:hover { background: var(--teal-dim); transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--teal); border: 1px solid var(--teal); font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.9rem; padding: 14px 28px; border-radius: 10px; text-decoration: none; transition: all 0.2s; }
+    .btn-secondary:hover { background: var(--teal-glow); }
+
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-brand { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: var(--teal); margin-bottom: 8px; }
+    .footer-sub { font-size: 0.75rem; color: var(--muted); margin-bottom: 20px; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); opacity: 0.6; }
+
+    #scrollTop { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--teal); color: var(--bg); border: none; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,201,184,0.4); transition: all 0.2s; z-index: 999; }
+    #scrollTop:hover { background: var(--teal-dim); transform: translateY(-2px); }
+    #scrollTop.visible { display: flex; }
+
+    @media (max-width: 640px) {
+      .header-inner { flex-direction: column; height: auto; padding: 12px 16px; gap: 8px; }
+      nav { justify-content: center; }
+      .hero { padding: 32px 16px 24px; }
+      .faq-container { padding: 32px 16px; }
+      .faq-question { padding: 16px 18px; }
+      .faq-answer { padding: 0 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-block">
+      <span class="logo-title">DBR · AI Leverage Lab™</span>
+      <span class="logo-sub">Dreams Business Resources · AI Accelerator</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/curriculum">Curriculum</a>
+      <a href="/tool-stack">Tool Stack</a>
+      <a href="/faq" class="active">FAQ</a>
+      <a href="/#b2b">B2B</a>
+      <a href="https://dreamsfaststart.com" class="nav-cta">Save My Seat →</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="/">AI Leverage Lab™</a>
+  <span>›</span>
+  <span style="color:var(--white)">Frequently Asked Questions</span>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">❓ Frequently Asked Questions</div>
+  <h1>Everything You Want to <span>Know Before You Join</span></h1>
+  <p>Real answers to the most common questions from producers considering the AI Leverage Lab™. Click any question to expand the answer.</p>
+</div>
+
+<hr class="divider" />
+
+<div class="faq-container">
+
+  <!-- CATEGORY: GETTING STARTED -->
+  <div class="faq-category">
+    <div class="category-label">Getting Started</div>
+
+    <div class="faq-item open">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">Is this really free to join?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p><strong>Yes — it's free to start.</strong> The program itself is free to join. The AI tools used in Weeks 1–6 (Claude, ChatGPT, NotebookLM) all have free tiers that are more than sufficient for the first half of the program.</p>
+        <p>Paid upgrades are introduced in Weeks 7–9 — but only after you're already getting results and know exactly what you're paying for. We never ask you to spend money on a tool before you've proven it works for your business.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">Do I need any coding or tech skills?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p><strong>Zero coding required. None.</strong> This program is specifically designed for working producers — not developers, not tech people, not "AI enthusiasts." If you can type a text message and use Google, you have all the technical skills you need.</p>
+        <p>The entire program is built around using AI tools through their normal interfaces — no code, no APIs, no technical setup. Week 1 starts with account creation and your first real prompts. That's it.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">How long is each class? When are they held?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>Each class is <strong>45–60 minutes</strong>, held live on Zoom once per week. The schedule is the same day and time every week so you can plan around it.</p>
+        <p>Live classes are held <strong>every Friday at 1:00 PM PT</strong>. The homepage always shows the next class date and live countdown.</p>
+        <p>Every class follows the same rhythm: 5 min wins & recognition → 10–15 min teaching → 20–25 min live demo → 10 min homework + Q&A.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">What if I miss a class?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p><strong>Recordings are included.</strong> Every live session is recorded and made available so you can catch up on your own schedule. The program is designed to be flexible for working producers who have real businesses to run.</p>
+        <p>That said, the live classes are where the magic happens — the Q&A, the live demos built in real time, and the recognition moments. We encourage you to attend live whenever possible.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">How do I join?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>Click <strong>"Save My Seat"</strong> on any page. You'll get the Week 1 Starter Guide immediately, plus the Zoom link and all details for the next live class.</p>
+        <p>Seats are kept limited to maintain an interactive class environment — so register early if you're interested.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY: WHO IT'S FOR -->
+  <div class="faq-category">
+    <div class="category-label">Who This Is For</div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">I'm a life insurance agent. Is this relevant to my business?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p><strong>Absolutely — this program was built with you in mind.</strong> Every live demo is done in the context of financial services and insurance. You'll see AI write follow-up sequences for policy reviews, generate client-facing explanations of complex products, build recruiting outreach, and automate the administrative work that eats your day.</p>
+        <p>The DBR B2B division opportunity revealed in Week 12 is specifically designed for agents who want to add a group sales income stream on top of their existing book.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">I'm not a DBR agent. Can I still join?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p><strong>Yes.</strong> The first 11 weeks of the program are relevant to any independent producer — life insurance agents, real estate agents, loan officers, financial advisors, consultants, and entrepreneurs. The skills taught (prospecting, follow-up, automation, content, client experience) apply across all industries.</p>
+        <p>Week 12 introduces the DBR B2B division opportunity specifically — but even that content is valuable for understanding how AI positions you for B2B conversations with business owners in any industry.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">I've been in the industry for 20+ years. Is this too basic for me?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p><strong>Experienced producers often get the most value.</strong> You already have the relationships, the knowledge, and the pipeline — AI just multiplies all of it. A 20-year producer who learns to use AI for follow-up and prospecting doesn't become a beginner again. They become a 20-year producer who also has a 24/7 AI assistant.</p>
+        <p>The program starts with foundations (Week 1–2) but moves quickly. By Week 5 you're building 30-day follow-up machines. By Week 9 you're delegating whole projects. Experienced producers consistently report the biggest time savings.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">I'm brand new to the industry. Is this right for me?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p><strong>Yes — and you have a massive advantage.</strong> New producers who learn AI from day one build habits that experienced producers have to unlearn and relearn. You'll build your prospecting system, your follow-up machine, and your content engine from scratch — with AI built in from the start.</p>
+        <p>Week 1 starts with the absolute basics. No prior knowledge of AI is assumed.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY: THE TOOLS -->
+  <div class="faq-category">
+    <div class="category-label">The AI Tools</div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">Which AI tools do I need to get started?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>For Weeks 1–6, you only need <strong>free accounts</strong> for:</p>
+        <ul>
+          <li><strong>Claude</strong> — claude.ai (free tier)</li>
+          <li><strong>ChatGPT</strong> — chatgpt.com (free tier)</li>
+        </ul>
+        <p>That's it to start. NotebookLM (free from Google) is introduced in Week 7. Claude Cowork and Manus are introduced in Weeks 8–9, after you're already getting results.</p>
+        <p>See the full <a href="/tool-stack">Tool Stack page</a> for a complete breakdown of every tool, when it's introduced, and what it costs.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">Do I need to pay for Claude or ChatGPT?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p><strong>Not to start.</strong> Both Claude and ChatGPT have free tiers that are sufficient for the first 6 weeks of the program. You'll get real results on free accounts before we ever suggest upgrading.</p>
+        <p>When paid upgrades are introduced, we'll show you exactly what you get for the money — and you'll already know from experience whether it's worth it for your business. No pressure, no upsells, just honest guidance.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">Why do you use multiple AI tools instead of just one?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>Because different tools are genuinely better at different things. <strong>Claude</strong> is the best for long-form writing, nuanced strategy, and business communication. <strong>ChatGPT</strong> has the best voice mode for practicing scripts out loud. <strong>NotebookLM</strong> is uniquely powerful for turning your own documents into a personal tutor. <strong>Manus</strong> is the only true AI agent that delivers finished work from a single prompt.</p>
+        <p>Using the right tool for the right job is a skill in itself — and one of the most valuable things you'll learn in this program.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY: RESULTS -->
+  <div class="faq-category">
+    <div class="category-label">Results & Expectations</div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">How much time will I save per week?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>Producers who use AI daily consistently report saving <strong>5–10 hours per week</strong>. The biggest time savings come from:</p>
+        <ul>
+          <li>Writing outreach and follow-up emails (used to take hours — now takes minutes)</li>
+          <li>Building proposals and presentations (AI drafts in seconds, you refine)</li>
+          <li>Administrative tasks (scheduling, summaries, reports — all automated)</li>
+          <li>Content creation (30 days of social content from one hour of work)</li>
+        </ul>
+        <p>Results vary based on how consistently you apply the homework each week.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">What's the homework like? How much time does it take?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>Each week has <strong>one specific homework assignment</strong> — designed to take 30–60 minutes and produce something you can actually use in your business that week. Not busy work. Not exercises. Real deliverables.</p>
+        <p>Examples: Week 2 homework is building your Business Brief. Week 5 homework is building your 30-day follow-up sequence. Week 9 homework is delegating your first project to Manus. Every assignment makes you money before the next class.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">What happens after Week 12?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>By Week 12, you'll have a <strong>complete AI-powered operating system</strong> running inside your business — prospecting systems, follow-up machines, content engines, automation workflows, and a 90-day growth plan.</p>
+        <p>Week 12 also reveals the <strong>B2B division opportunity</strong> — how your new AI skills position you to approach business owners and earn residual income on their entire teams through the DBR model. For many producers, this becomes the most valuable part of the entire program.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">Is this just theory, or will I actually build real things?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p><strong>Everything is built live.</strong> There are no slides-only lectures. Every class includes a 20–25 minute live demo where the instructor builds the actual deliverable on screen, in real time, for the producer's industry. You watch it happen, then you do it yourself as homework.</p>
+        <p>By the end of Week 12, you'll have 12 real deliverables — not certificates, not notes. Working systems running inside your business.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY: B2B OPPORTUNITY -->
+  <div class="faq-category">
+    <div class="category-label">The B2B Opportunity</div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">What is the B2B opportunity revealed in Week 12?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>Week 12 introduces the <strong>DBR B2B division</strong> — a model where your AI skills position you to approach business owners not as a salesperson, but as an AI advisor who genuinely helps their business. That trust-based positioning opens the door to group sales conversations where one "yes" from a business owner earns you residual income on their entire team.</p>
+        <p>The AI skills from Weeks 1–11 make B2B prospecting dramatically more effective — you can research any business owner, understand their challenges, and craft outreach that speaks directly to their situation before you ever pick up the phone.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-text">Do I have to pursue the B2B opportunity to get value from this program?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <p><strong>No.</strong> The first 11 weeks stand completely on their own. The AI skills for prospecting, follow-up, automation, content, and client experience are valuable regardless of whether you ever pursue the B2B division.</p>
+        <p>Week 12 is presented as an opportunity — not a requirement. Many producers complete the program and apply the skills entirely to their existing individual business. Others find the B2B opportunity becomes the most significant income shift of their career. Both outcomes are valid.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="divider" />
+
+<div class="cta-section">
+  <div class="section-label">Still Have Questions?</div>
+  <h2>Join the Next <span>Live Class</span></h2>
+  <p>The best way to get your questions answered is to show up live. Bring your questions — we open every class with Q&A.</p>
+  <div class="btn-row">
+    <a href="https://dreamsfaststart.com" class="btn-primary">Save My Seat →</a>
+    <a href="/curriculum" class="btn-secondary">View the Curriculum</a>
+    <a href="/tool-stack" class="btn-secondary">See the Tool Stack</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">DBR AI LEVERAGE LAB™</div>
+    <div class="footer-sub">Dreams Business Resources · dreamsfaststart.com</div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/curriculum">Curriculum</a>
+      <a href="/tool-stack">Tool Stack</a>
+      <a href="/faq">FAQ</a>
+      <a href="https://dreamsfaststart.com">DBR Fast Start</a>
+      <a href="https://renewalsforlife.com/">Renewals For Life</a>
+    </div>
+    <div class="footer-copy">© 2026 Dreams Business Resources. All rights reserved. Income results vary. Educational purposes only.</div>
+  </div>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<script>
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    // Open this one if it wasn't open
+    if (!isOpen) item.classList.add('open');
+  }
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>

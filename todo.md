@@ -161,3 +161,18 @@
 - [x] Add the branded favicon to `/savemyseat/` without changing the boxed layout, content, or registration behavior.
 - [x] Synchronize the managed preview and validate favicon delivery, build health, anchors, and responsive integrity.
 - [x] Checkpoint, publish the canonical GitHub Pages update, and verify the live custom-domain favicon and preserved routes.
+
+## Static HTML and Crawler Visibility Rebuild — July 22, 2026
+
+- [x] Inventory every production route and classify it as already static or JavaScript-dependent.
+- [x] Capture and document the Electric Blueprint and Nocturne Command Deck visual, responsive, and animation baseline that the rebuild must preserve without redesign.
+- [x] Generate crawler-visible initial HTML for the homepage, While You Sleep, Genies, and all eight topic routes.
+- [x] Confirm `/curriculum.html`, `/faq.html`, `/savemyseat/`, `/tool-stack.html`, and `/bundle/` already retain their existing static body content in the production artifact.
+- [x] Ensure every affected route’s raw HTML contains the visible H1/H2 hierarchy, body copy, semantic `<a href>` navigation, image `alt` attributes, and a self-referencing canonical.
+- [x] Add factual JSON-LD only: Organization and Person on the homepage; Course where visible facts support it; BreadcrumbList on inner pages; omit unsupported Event dates and placeholders.
+- [x] Preserve Manus/Umami analytics, the `aileveragelab:redirect` sessionStorage restoration script, downloads, and route-specific enhancements.
+- [x] Preserve and verify the Dreams Cloud GoHighLevel registration iframe on `/savemyseat/` while keeping all surrounding sales copy in static HTML.
+- [x] Replace route-changing button handlers with semantic anchors or router links while retaining appearance and interaction polish.
+- [x] Validate source-versus-rendered parity, preview status behavior, canonical/sitemap agreement, schema syntax, internal links, images, console output, and 390px mobile layout; reserve production 404 verification for the post-publish check.
+- [x] Build and preview the exact GitHub Pages release artifact; verify homepage carousel, While You Sleep anchors, Genies experience, and Dreams Cloud registration flow.
+- [ ] Publish through the existing source/main workflow only after all acceptance checks pass, then verify cache-busted production routes.

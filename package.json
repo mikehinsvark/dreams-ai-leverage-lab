@@ -5,7 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build && node scripts/generate_static_routes.mjs && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build:client": "vite build",
+    "build:ssr": "vite build --ssr src/entry-server.tsx --outDir ../dist/ssr --emptyOutDir",
+    "prerender": "node scripts/generate_static_routes.mjs",
+    "build": "pnpm build:client && pnpm build:ssr && pnpm prerender && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",

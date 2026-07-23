@@ -261,8 +261,8 @@ export default function WhileYouSleep() {
               <h1>Build the team that clocks in <em>when you clock out.</em></h1>
               <p>Launch a practical AI agent team for recruiting, follow-up, prospect research, and daily execution—without needing a technical background.</p>
               <div className="wys-hero__actions">
-                <button type="button" className="wys-button" onClick={() => scrollToSection("session1")}>Launch Session 1 <ArrowRight size={17} /></button>
-                <button type="button" className="wys-button wys-button--ghost" onClick={() => scrollToSection("session2")}><Clipboard size={17} /> View Task Templates</button>
+                <a href="#session1" className="wys-button" onClick={(event) => { event.preventDefault(); scrollToSection("session1"); }}>Launch Session 1 <ArrowRight size={17} /></a>
+                <a href="#session2" className="wys-button wys-button--ghost" onClick={(event) => { event.preventDefault(); scrollToSection("session2"); }}><Clipboard size={17} /> View Task Templates</a>
               </div>
               <div className="wys-proofline">
                 <span><strong>3</strong> guided sessions</span>
@@ -300,17 +300,17 @@ export default function WhileYouSleep() {
               </div>
             </aside>
           </div>
-          <button className="wys-scroll-cue" type="button" onClick={() => scrollToSection("journey")} aria-label="Scroll to the training journey">
+          <a href="#journey" className="wys-scroll-cue" onClick={(event) => { event.preventDefault(); scrollToSection("journey"); }} aria-label="Scroll to the training journey">
             <span>See the system</span><ArrowDown size={17} />
-          </button>
+          </a>
         </section>
 
         <nav className="wys-session-nav" aria-label="Training session navigation">
           <div className="wys-shell">
             {sessions.map((session) => (
-              <button key={session.id} type="button" className={activeSection === session.id ? "is-active" : ""} onClick={() => scrollToSection(session.id)}>
+              <a key={session.id} href={`#${session.id}`} className={activeSection === session.id ? "is-active" : ""} onClick={(event) => { event.preventDefault(); scrollToSection(session.id); }}>
                 <span>{session.number}</span><strong>{session.short}</strong><small>{session.label}</small>
-              </button>
+              </a>
             ))}
           </div>
         </nav>
@@ -444,7 +444,7 @@ export default function WhileYouSleep() {
             <div>Twelve weeks from now, one version of you is still doing everything manually. The other wakes up to a briefing, researched prospects, and prepared outreach.</div>
             <div className="wys-final__actions">
               <a href={CLAUDE_REFERRAL_URL} target="_blank" rel="noreferrer" className="wys-button">Download Claude Desktop <ExternalLink size={16} /></a>
-              <button type="button" className="wys-button wys-button--ghost" onClick={() => scrollToSection("session1")}>Restart Session 1 <ArrowRight size={16} /></button>
+              <a href="#session1" className="wys-button wys-button--ghost" onClick={(event) => { event.preventDefault(); scrollToSection("session1"); }}>Restart Session 1 <ArrowRight size={16} /></a>
             </div>
             <small>3 sessions · 60 minutes each · No technical background required · Weekly support</small>
           </div>
@@ -459,7 +459,7 @@ export default function WhileYouSleep() {
         <div className="wys-shell wys-footer__legal">© 2026 Dreams Business Resources · Mike Hinsvark, Senior Agency Partner. Educational use only. Claude, Cowork, Gmail, Google Calendar, and Calendly are trademarks of their respective owners; DBR is not affiliated with or endorsed by them. Income results vary.</div>
       </footer>
 
-      <button type="button" className={`wys-to-top ${scrollProgress > 12 ? "is-visible" : ""}`} onClick={() => scrollToSection("top")} aria-label="Back to top"><ChevronUp size={20} /></button>
+      <a href="#top" className={`wys-to-top ${scrollProgress > 12 ? "is-visible" : ""}`} onClick={(event) => { event.preventDefault(); scrollToSection("top"); }} aria-label="Back to top"><ChevronUp size={20} /></a>
     </div>
   );
 }

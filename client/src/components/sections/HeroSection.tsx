@@ -1,6 +1,5 @@
 /* Electric Blueprint × Quantum Bolt: compact mission-control hero preserving the live countdown, six-tool carousel, status rail, conversion actions, and topic strip. */
 import { useEffect, useState } from "react";
-import { useLocation } from "wouter";
 import { Download, Zap } from "lucide-react";
 import ClassCountdown from "@/components/ClassCountdown";
 import HeroCarousel, { AI_TOOL_LOGOS } from "@/components/HeroCarousel";
@@ -17,7 +16,6 @@ const statusCards = [
 ];
 
 export default function HeroSection() {
-  const [, navigate] = useLocation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -167,7 +165,7 @@ export default function HeroSection() {
                   Zoom Link
                 </a>
                 <a
-                  href="/genies"
+                  href="/genies/"
                   className="dbr-genie-hero-link inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 font-bold transition-all duration-200"
                   aria-label="Open AI Genie Team"
                   style={{
@@ -229,13 +227,9 @@ export default function HeroSection() {
             </div>
             <div className="grid grid-cols-4 gap-1.5 sm:grid-cols-8">
               {TOPIC_PAGES.map((topic, index) => (
-                <button
-                  type="button"
+                <a
                   key={topic.id}
-                  onClick={() => {
-                    navigate(topic.path);
-                    window.scrollTo(0, 0);
-                  }}
+                  href={`${topic.path}/`}
                   className="flex flex-col items-center gap-1 rounded-lg px-1 py-2 text-center transition-all duration-200"
                   style={{
                     background: "oklch(0.1 0.025 240 / 0.85)",
@@ -263,7 +257,7 @@ export default function HeroSection() {
                   <span className="font-bold leading-tight" style={{ color: topic.color, fontFamily: "'Space Grotesk', sans-serif", fontSize: "9px" }}>
                     {topic.label}
                   </span>
-                </button>
+                </a>
               ))}
             </div>
           </div>

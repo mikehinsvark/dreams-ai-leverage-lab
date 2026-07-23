@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation, useRoute } from "wouter";
+import { useRoute } from "wouter";
 import { ArrowLeft, Download } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -226,7 +226,6 @@ const topicContent: Record<string, {
 };
 
 export default function TopicPage() {
-  const [, navigate] = useLocation();
   const [, params] = useRoute("/topics/:id");
   const topicId = params?.id ?? "";
 
@@ -256,9 +255,9 @@ export default function TopicPage() {
                 <p className="mt-6 max-w-xl text-base leading-relaxed" style={{ color: "rgba(159,195,202,0.78)", fontFamily: "'DM Sans', sans-serif" }}>
                   This topic coordinate is not active. Return to the main command deck or route directly into one of the eight operating systems below.
                 </p>
-                <button onClick={() => navigate("/")} className="mt-7 rounded-full px-6 py-3 font-bold transition-all duration-200" style={{ background: "#00E7E0", color: "#03090D", boxShadow: "0 0 24px rgba(0,231,224,0.22)", fontFamily: "'Space Grotesk', sans-serif" }}>
+                <a href="/" className="mt-7 inline-flex rounded-full px-6 py-3 font-bold transition-all duration-200" style={{ background: "#00E7E0", color: "#03090D", boxShadow: "0 0 24px rgba(0,231,224,0.22)", fontFamily: "'Space Grotesk', sans-serif" }}>
                   Return to AI Leverage Lab →
-                </button>
+                </a>
               </section>
               <aside className="relative overflow-hidden rounded-2xl p-6" style={{ background: "linear-gradient(160deg, rgba(7,27,42,0.95), rgba(3,9,13,0.95))", border: "1px solid rgba(0,231,224,0.18)", boxShadow: "0 24px 70px rgba(0,0,0,0.36)" }}>
                 <div className="absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(90deg, #00E7E0, #2A8CFF 62%, transparent)" }} />
@@ -285,10 +284,10 @@ export default function TopicPage() {
             </div>
             <div className="relative mt-5 grid grid-cols-2 gap-2 md:grid-cols-4">
               {TOPIC_PAGES.map((item, index) => (
-                <button key={item.id} onClick={() => navigate(item.path)} className="flex items-center gap-2 rounded-lg px-3 py-3 text-left transition-all duration-200" style={{ background: "rgba(7,27,42,0.78)", border: "1px solid rgba(0,231,224,0.12)" }}>
+                <a key={item.id} href={`${item.path}/`} className="flex items-center gap-2 rounded-lg px-3 py-3 text-left transition-all duration-200" style={{ background: "rgba(7,27,42,0.78)", border: "1px solid rgba(0,231,224,0.12)" }}>
                   <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: item.color, boxShadow: `0 0 7px ${item.color}` }} />
                   <span className="min-w-0"><span className="block tabular-nums" style={{ color: "rgba(159,195,202,0.48)", fontFamily: "'IBM Plex Mono', monospace", fontSize: "7px" }}>{String(index + 1).padStart(2, "0")}</span><span className="block truncate font-bold" style={{ color: "#EAFBFF", fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px" }}>{item.label}</span></span>
-                </button>
+                </a>
               ))}
             </div>
           </main>
@@ -321,8 +320,8 @@ export default function TopicPage() {
         />
         <div className="container relative z-10">
           {/* Back nav */}
-          <button
-            onClick={() => navigate("/")}
+          <a
+            href="/"
             className="flex items-center gap-2 mb-8 text-sm font-semibold transition-opacity duration-150"
             style={{ color: "oklch(0.55 0.06 175)", fontFamily: "'DM Sans', sans-serif" }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.7")}
@@ -330,7 +329,7 @@ export default function TopicPage() {
           >
             <ArrowLeft size={16} />
             Back to AI Leverage Lab
-          </button>
+          </a>
 
           {/* Topic badge */}
           <div
@@ -369,7 +368,7 @@ export default function TopicPage() {
           {/* Action buttons */}
           <div className="flex flex-wrap gap-3">
             <a
-              href="mailto:mikeceo@gmail.com?subject=Register%20Me%20for%20the%20DBR%20AI%20Accelerator"
+              href="/savemyseat/"
               className="px-7 py-3 rounded-full font-bold text-sm transition-all duration-200"
               style={{
                 background: topic.color,
@@ -495,7 +494,7 @@ export default function TopicPage() {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
-                href="mailto:mikeceo@gmail.com?subject=Register%20Me%20for%20the%20DBR%20AI%20Accelerator"
+                href="/savemyseat/"
                 className="px-8 py-3 rounded-full font-bold text-sm"
                 style={{
                   background: topic.color,
@@ -506,8 +505,8 @@ export default function TopicPage() {
               >
                 Save My Seat — Free to Start →
               </a>
-              <button
-                onClick={() => navigate("/")}
+              <a
+                href="/"
                 className="px-8 py-3 rounded-full font-bold text-sm"
                 style={{
                   background: "transparent",
@@ -517,7 +516,7 @@ export default function TopicPage() {
                 }}
               >
                 ← Explore All Topics
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -536,9 +535,9 @@ export default function TopicPage() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
             {TOPIC_PAGES.filter((t) => t.id !== topicId).map((t, index) => (
-              <button
+              <a
                 key={t.id}
-                onClick={() => navigate(t.path)}
+                href={`${t.path}/`}
                 className="flex flex-col items-center gap-1.5 p-3 rounded-xl text-center transition-all duration-200"
                 style={{
                   background: "oklch(0.11 0.025 240)",
@@ -562,7 +561,7 @@ export default function TopicPage() {
                 <span className="text-xs font-bold" style={{ color: t.color, fontFamily: "'Space Grotesk', sans-serif" }}>
                   {t.label}
                 </span>
-              </button>
+              </a>
             ))}
           </div>
         </div>
