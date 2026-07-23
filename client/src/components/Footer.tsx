@@ -4,7 +4,7 @@ import brandLogo from "@/assets/brand/ai-leverage-lab-logo-dark.svg";
 const footerLinks = [
   { label: "Fast Start", href: "https://dreamsfaststart.com" },
   { label: "Renewals For Life", href: "https://renewalsforlife.com/" },
-  { label: "AI Genie Database", href: "https://dreamsaiagents.pro/mike-portal.html" },
+  { label: "AI Genie Bundle", href: "/bundle/", featured: true },
   { label: "B2B Income Calculator", href: "https://dreamsincal-lifetime.manus.space/#quantum" },
 ];
 
@@ -45,10 +45,17 @@ export default function Footer() {
               <a
                 key={link.href}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-semibold transition-opacity duration-150"
-                style={{ color: "oklch(0.78 0.15 175)", fontFamily: "'DM Sans', sans-serif" }}
+                target={link.featured ? undefined : "_blank"}
+                rel={link.featured ? undefined : "noopener noreferrer"}
+                className="text-sm font-semibold rounded-full px-1.5 py-0.5 transition-all duration-150"
+                style={{
+                  color: link.featured ? "oklch(0.82 0.15 75)" : "oklch(0.78 0.15 175)",
+                  fontFamily: "'DM Sans', sans-serif",
+                  textShadow: link.featured ? "0 0 12px oklch(0.78 0.14 75 / 0.45)" : "none",
+                  borderBottom: link.featured
+                    ? "1px solid oklch(0.78 0.14 75 / 0.55)"
+                    : "1px solid transparent",
+                }}
                 onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.7")}
                 onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = "1")}
               >

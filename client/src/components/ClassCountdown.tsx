@@ -118,14 +118,17 @@ function Separator() {
 }
 
 export default function ClassCountdown() {
-  const [now, setNow] = useState(() => Date.now());
+  const [now, setNow] = useState<number | null>(null);
 
   useEffect(() => {
-    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    const tick = () => setNow(Date.now());
+    tick();
+    const timer = window.setInterval(tick, 1000);
     return () => window.clearInterval(timer);
   }, []);
 
-  const { start, live } = useMemo(() => getNextClass(now), [now]);
+  const ready = now !== null;
+  const { start, live } = useMemo(() => getNextClass(now ?? 0), [now]);
   const dateLabel = useMemo(() => {
     const day = new Intl.DateTimeFormat("en-US", {
       timeZone: CLASS_SCHEDULE.ianaZone,
@@ -163,7 +166,7 @@ export default function ClassCountdown() {
     return { google, outlook, ics: `data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}` };
   }, [end, start]);
 
-  const remaining = Math.max(0, start - now);
+  const remaining = ready ? Math.max(0, start - now) : 0;
   const days = Math.floor(remaining / 86_400_000);
   const hours = Math.floor((remaining % 86_400_000) / 3_600_000);
   const minutes = Math.floor((remaining % 3_600_000) / 60_000);
@@ -188,20 +191,29 @@ export default function ClassCountdown() {
           className="font-bold uppercase tracking-widest"
           style={{ fontFamily: "'Space Grotesk', sans-serif", color: "oklch(0.78 0.15 175)", fontSize: "9px" }}
         >
-          {live ? "Class Is Live" : "Next Live Class"}
+          {ready && live ? "Class Is Live" : "Next Live Class"}
         </span>
         <span className="font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "oklch(0.85 0.03 175)", fontSize: "11px" }}>
-          {dateLabel}
+          {ready ? dateLabel : "Loading schedule…"}
         </span>
       </div>
-      <div className="flex items-end gap-1.5" aria-label={live ? "Class is live now" : `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds until class`}>
-        <CountdownUnit value={pad(days)} label="Days" />
+      <div
+        className="flex items-end gap-1.5"
+        aria-label={
+          !ready
+            ? "Class countdown loading"
+            : live
+              ? "Class is live now"
+              : `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds until class`
+        }
+      >
+        <CountdownUnit value={ready ? pad(days) : "--"} label="Days" />
         <Separator />
-        <CountdownUnit value={pad(hours)} label="Hrs" />
+        <CountdownUnit value={ready ? pad(hours) : "--"} label="Hrs" />
         <Separator />
-        <CountdownUnit value={pad(minutes)} label="Min" />
+        <CountdownUnit value={ready ? pad(minutes) : "--"} label="Min" />
         <Separator />
-        <CountdownUnit value={pad(seconds)} label="Sec" />
+        <CountdownUnit value={ready ? pad(seconds) : "--"} label="Sec" />
       </div>
       <Popover>
         <PopoverTrigger asChild>

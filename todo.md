@@ -176,3 +176,11 @@
 - [x] Validate source-versus-rendered parity, preview status behavior, canonical/sitemap agreement, schema syntax, internal links, images, console output, and 390px mobile layout; reserve production 404 verification for the post-publish check.
 - [x] Build and preview the exact GitHub Pages release artifact; verify homepage carousel, While You Sleep anchors, Genies experience, and Dreams Cloud registration flow.
 - [x] Publish through the existing source/main workflow only after all acceptance checks pass, then verify cache-busted production routes, production 404 behavior, compatibility assets, and preserved integrations.
+
+## Restore Gold AI Genie Bundle Footer Link — July 23, 2026
+
+- [x] Compare commit `0fde07f`, the current source branch, generated artifact, and live footer to recover the exact link and styling intent.
+- [x] Replace `AI Genie Database` with a canonical `/bundle/` AI Genie Bundle anchor in the shared React footer while leaving neighboring links unchanged.
+- [x] Restore the restrained DBR-gold color, glow, and underline accent without changing footer layout or responsive behavior.
+- [x] Rebuild and verify raw HTML, link targets, desktop/mobile overflow, visual treatment, console health, and preserved static-route audits.
+- [ ] Publish the source and GitHub Pages artifact correction, then verify the live homepage, representative inner routes, and Bundle destination.
