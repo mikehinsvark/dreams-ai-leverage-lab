@@ -175,4 +175,4 @@
 - [x] Replace route-changing button handlers with semantic anchors or router links while retaining appearance and interaction polish.
 - [x] Validate source-versus-rendered parity, preview status behavior, canonical/sitemap agreement, schema syntax, internal links, images, console output, and 390px mobile layout; reserve production 404 verification for the post-publish check.
 - [x] Build and preview the exact GitHub Pages release artifact; verify homepage carousel, While You Sleep anchors, Genies experience, and Dreams Cloud registration flow.
-- [ ] Publish through the existing source/main workflow only after all acceptance checks pass, then verify cache-busted production routes.
+- [x] Publish through the existing source/main workflow only after all acceptance checks pass, then verify cache-busted production routes, production 404 behavior, compatibility assets, and preserved integrations.
