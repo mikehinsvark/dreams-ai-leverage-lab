@@ -25,3 +25,7 @@ The local `/ai-era/` preview now presents as a centered premium desktop canvas w
 ## Floating video call-to-action validation
 
 The main AI Leverage Lab page now has a fixed lower-right full-color call to action with a play icon, a `Lead the AI Era` kicker, and the label `Watch the Full-Color AI Video`. It uses a cyan-to-blue-to-violet premium treatment modeled on the supplied reference, remains outside the hero flow, and therefore does not change the hero height. Local click testing confirmed that it opens `/ai-era/` successfully.
+
+## Tightened hero local verification
+
+The AI-era hero no longer fills the viewport. Its desktop spacing was reduced to 46px above and 42px below, with the viewport-height constraint removed. The headline scale was reduced from a 96px maximum to a 66px maximum, the body copy is smaller, and related action/stat spacing has been tightened. The local preview now presents a compact hero that matches the original AI Leverage Lab site’s proportions more closely.
