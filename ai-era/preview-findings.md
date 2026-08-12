@@ -21,3 +21,7 @@ The live home page now shows the highlighted `Film ↗` control in place of Zoom
 ## Boxed-canvas local validation
 
 The local `/ai-era/` preview now presents as a centered premium desktop canvas with a rich dark backdrop on both sides, matching the requested boxed visual treatment. The original hero composition, video player, calls to action, and content hierarchy remain intact. The width rule collapses to 100% at and below 1160px so tablet and mobile layouts remain responsive.
+
+## Floating video call-to-action validation
+
+The main AI Leverage Lab page now has a fixed lower-right full-color call to action with a play icon, a `Lead the AI Era` kicker, and the label `Watch the Full-Color AI Video`. It uses a cyan-to-blue-to-violet premium treatment modeled on the supplied reference, remains outside the hero flow, and therefore does not change the hero height. Local click testing confirmed that it opens `/ai-era/` successfully.
