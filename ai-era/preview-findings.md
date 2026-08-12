@@ -9,3 +9,15 @@ The initial home-page hero inspection showed the existing Zoom Link still presen
 The compact highlighted `Film ↗` link now replaces the Zoom Link and resolves to `/ai-era/`. At desktop width, it remains on the same existing action row as Google Drive Docs and AI Genie Team. The hero section retains its original visual height; only the button label and styling changed.
 
 The dedicated video page continues to render correctly with the embedded 66-second MP4, a branded poster frame, full-color electric-blueprint styling, responsive desktop/mobile layout, and Save My Seat calls to action.
+
+## Live deployment verification
+
+GitHub Pages built successfully from commit `f98be95`. The dedicated page is live at `https://aileveragelab.pro/ai-era/` and loaded successfully from the production domain. The live page exposes the full-color AI-era experience and its embedded 66-second MP4 player.
+
+## Final production home-page verification
+
+The live home page now shows the highlighted `Film ↗` control in place of Zoom Link. It remains on the existing hero action row between Google Drive Docs and AI Genie Team, and the hero height remains unchanged. The control resolves to the new live `/ai-era/` video page.
+
+## Boxed-canvas local validation
+
+The local `/ai-era/` preview now presents as a centered premium desktop canvas with a rich dark backdrop on both sides, matching the requested boxed visual treatment. The original hero composition, video player, calls to action, and content hierarchy remain intact. The width rule collapses to 100% at and below 1160px so tablet and mobile layouts remain responsive.
